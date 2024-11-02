@@ -2,7 +2,7 @@
 ---
 >
 ## Introduction
->Do you remember when was your last vacation? Do you know where to go for best Sips and Bites? Our Navigator app can help you choose a destination which provides information on active breweries, cideries, brewpubs, and bottleshops.
+>Do you remember when was your last vacation? Do you know where to go for best Sips and Bites? Our Web app can help you choose a destination which provides information on active breweries, cideries, brewpubs, and bottleshops.
 >
 >- Provides you state codes for easy search by category  
 >- Best Breweries
