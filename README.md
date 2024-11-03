@@ -19,3 +19,12 @@
 ---
 [Sips & Bites Navigator](C:\Users\Hally\OneDrive - University of Cincinnati\MSIS 24 Courses\XML & Web Services -IS7024)
 ![Storyboard](https://github.com/user-attachments/assets/ee1bb48c-fa26-4086-8a49-0534a7624594)
+
+### Team Composition
+> Neetu Turan - Product Owner,
+> Aliu Adekunle - Developer,
+> Adenike Adeniran - UI/UX,
+
+
+>  
+> 
