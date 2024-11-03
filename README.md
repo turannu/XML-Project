@@ -26,8 +26,10 @@
 > Adenike Adeniran - UI/UX,
 
 ### Weekly Team Members Meetings
-> Fridays (In person) 
+> Fridays (In person), 
 > Saturdays (Virtual Session)
 >
-
-> 
+ ### Weekly Meeting Time
+> Fridays: 5:00pm to 6:00pm,
+> Saturdays: 1:00pm to 2:00pm.
+>  
