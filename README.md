@@ -1,4 +1,4 @@
-## Sips & Bites Navigator
+# Sips & Bites Navigator
 ---
 >
 ## Introduction
@@ -8,19 +8,19 @@
 >- Best Breweries
 ---
 ## Logo
->-![Screenshot 2024-11-03 122301](https://github.com/user-attachments/assets/e7e3dce8-badd-488f-a36f-8d08eb9c27f8)
-
+> ![Screenshot 2024-11-03 122301](https://github.com/user-attachments/assets/e7e3dce8-badd-488f-a36f-8d08eb9c27f8) <Sips and Bites Navigator logo letter color is white with a green background and says Sips and Bites>
+---
 
 ## Data Feeds:-
 
->-https://www.openbrewerydb.org/
+>- <Brewery Data Source>https://www.openbrewerydb.org/
 
->-https://console.cloud.google.com/apis/library 
+>- <google api> https://console.cloud.google.com/apis/library 
 
->-https://worldpopulationreview.com/static/states/abbr-name-list.json
-
-### StoryBoard
+>- <US States Data>https://worldpopulationreview.com/static/states/abbr-name-list.json
 ---
+### StoryBoard
+
 
 >-![Storyboard](https://github.com/user-attachments/assets/ee1bb48c-fa26-4086-8a49-0534a7624594)
 
