@@ -24,7 +24,7 @@
 
 >-![Storyboard](https://github.com/user-attachments/assets/ee1bb48c-fa26-4086-8a49-0534a7624594)
 
-## Functional Requirements
+## Functional Requirements 1
 
 **Scenerio**
 
@@ -60,6 +60,13 @@ such as beer, cider, wine, and sometimes spirits
 - System shall must validate state code inputs
   
 **Category Filtering** FR-02
+
+### Functional Requirement 2:
+
+#### Scenario
+
+As a user, I want to filter breweries by their beer styles (Brewerier, Cideries ,Brewpubs, etc.), so that I can find breweries that make my preferred beer types.
+
 - System shall allow filtering by establishment type
    -Breweries
    -Cideries
