@@ -56,16 +56,17 @@
 - System shall integrate with brewery database API
 - System shall maintain data Accuracy
 
-### Team Composition
-> Neetu Turan - Product Owner,
-> Aliu Adekunle - Developer,
-> Adenike Adeniran - UI/UX.
+## Scrum Rules
+- Product Owner: Neetu Turan
+- DevOps: Aliu Adekunle
+- Adenike Adeniran:  Integration Developer.
 
-### Weekly Team Members Meetings
-> Fridays (In person), 
-> Saturdays (Virtual Session).
->
- ### Weekly Meeting Time
-> Fridays: 5:00pm to 6:00pm,
-> Saturdays: 1:00pm to 2:00pm.
+## Weekly Team Members Meetings
+Fridays (In person),
+Saturdays (Teams).
+
+ ## Weekly Meeting Time
+ Fridays: 5:00pm to 6:00pm.
+ Saturdays: 1:00pm to 2:00pm.
+ 
 >  
