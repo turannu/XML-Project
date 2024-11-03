@@ -8,7 +8,8 @@
 >- Best Breweries
 ---
 ## Logo
-> ![Screenshot 2024-11-03 122301](https://github.com/user-attachments/assets/e7e3dce8-badd-488f-a36f-8d08eb9c27f8) <Sips and Bites Navigator logo letter color is white with a green background and says Sips and Bites>
+
+> ![Sips and Bites Navigator logo letter color is white with a green background and says Sips and Bites](https://github.com/turannu/XML-Project/blob/master/Screenshot%202024-11-03%20122301.png)
 ---
 
 ## Data Feeds:-
@@ -20,11 +21,12 @@
 >- <US States Data>https://worldpopulationreview.com/static/states/abbr-name-list.json
 ---
 ## Project Board:-
->- https://github.com/users/turannu/projects/2 <Github link to open Github Project with board task>
+> https://github.com/users/turannu/projects/2 <Github link to open Github Project with board task>
 ## StoryBoard
 
 
->-![Storyboard](https://github.com/user-attachments/assets/ee1bb48c-fa26-4086-8a49-0534a7624594)
+> ![Storyboard](https://github.com/user-attachments/assets/ee1bb48c-fa26-4086-8a49-0534a7624594)
+---
 
 ## Functional Requirements 
 
@@ -32,12 +34,12 @@
 
 #### Scenario
 
-As a user, I want to be able to search for and navigate for any sip-and-bites location around me, filtering based on preferences 
-
+>-As a user, I want to be able to search for and navigate for any sip-and-bites location around me, filtering based on preferences 
+---
 #### Dependencies
 
-Navigation data are avaialble and accessible.
-
+>-Navigation data are avaialble and accessible.
+--
 #### Assumptions
 
 1.1
@@ -90,22 +92,18 @@ View differents Locations Display.
 **Then** 
 - When I navigate the result should display, organized list of Establishment Name, Category/type, Address, Operating hours, Contact Information.
 
+---
+## Technical Requirements:  FR-05 API Integration
+>- System shall integrate with brewery database API
+>- System shall maintain data Accuracy
+---
+## Scrum Rules:
+>- Product Owner/Integration Developer: Neetu Turan
+>- DevOps Engineer/Front-end Developer: Aliu Adekunle
+>- Integration Developer/Back-End Developer : Adenike Adeniran
+---
+ ## Weekly Meeting Time and Format:
+ >- Fridays(In-Person): 5:00pm to 6:00pm
+ >- Saturdays(Virtual): 1:00pm to 2:00pm
+ ---
 
-**Technical Requirements** FR-05 API Integration
-- System shall integrate with brewery database API
-- System shall maintain data Accuracy
-
-## Scrum Rules
-- Product Owner: Neetu Turan
-- DevOps: Aliu Adekunle
-- Integration Developer: Adenike Adeniran
-
-## Weekly Team Members Meetings
-Fridays (In person),
-Saturdays (Teams).
-
- ## Weekly Meeting Time
- Fridays: 5:00pm to 6:00pm,
- Saturdays: 1:00pm to 2:00pm.
- 
->  
