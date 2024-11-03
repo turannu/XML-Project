@@ -65,27 +65,30 @@ such as beer, cider, wine, and sometimes spirits
 
 #### Scenario
 
-As a user, I want to filter breweries by their beer styles (Brewerier, Cideries ,Brewpubs, etc.), so that I can find breweries that make my preferred beer types.
+As a user, I want to filter breweries by their beer styles (Breweries, Cideries ,Brewpubs, etc.), so that I can find breweries that make my preferred beer types.
 
+ #### Dependencies
+Establishment locations on a map
+Get Directions from map
+Differents Locations Display
+
+#### Assumptions  
 - System shall allow filtering by establishment type
    -Breweries
    -Cideries
    -Brewpubs
    -Bottleshops
+
+  **Given** a list of preference of listed beers available 
+**When**  
+-	Select the Beers based on your Favourites or Peferences
+
   
-**Result Display** FR-03
-- System shall display search result in an organized list/grid
-- Each result must show:
-   * Establishment name
-   * Category/type
-   * Address
-   * Operating hours
-   * Contact information
- 
-**Navigation and Accessibility** FR-04 Interactive Map
-- System shall display establishment locations on a map
-- Users must be able to get directions
-- Map should show multiple locations
+**Then**  when I navigate the result should display, organized list of Establishment Name, Category/type, Address, Operating hours,  Contact Information
+
+
+
+
 
 **Technical Requirements** FR-05 API Integration
 - System shall integrate with brewery database API
