@@ -26,6 +26,34 @@
 
 ## Functional Requirements
 
+**Scenerio**
+
+As a user, I want to be able to search for and navigate for any sip-and-bites location around me, filtering based on preferences 
+
+**Dependencies**
+
+Navigation data are avaialble and accessible.
+
+**Example**
+
+1.1
+
+Based on the available data
+
+When I search for breweries
+
+I should be able to see different varieties and then navigate through them
+
+1.2
+
+Given the data available
+
+When I search for Bottleshops, 
+
+Then I shoud be able to see locations that sell variety of alcoholic beverages,
+
+such as beer, cider, wine, and sometimes spirits
+
 **Search & Navigation** FR-01: Location Search
 - System shall allow users to search breweries by state codes
 - System shall provide a dropdown/list of valid state codes
