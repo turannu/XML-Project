@@ -7,7 +7,11 @@
 >- Provides you state codes for easy search by category  
 >- Best Breweries
 ---
-### Data Feeds:-
+## Logo
+>-![Screenshot 2024-11-03 122301](https://github.com/user-attachments/assets/e7e3dce8-badd-488f-a36f-8d08eb9c27f8)
+
+
+## Data Feeds:-
 
 >-https://www.openbrewerydb.org/
 
@@ -15,13 +19,12 @@
 
 >-https://worldpopulationreview.com/static/states/abbr-name-list.json
 
-#### StoryBoard
+### StoryBoard
 ---
-[Sips & Bites Navigator](C:\Users\Hally\OneDrive - University of Cincinnati\MSIS 24 Courses\XML & Web Services -IS7024)
 
-![Storyboard](https://github.com/user-attachments/assets/ee1bb48c-fa26-4086-8a49-0534a7624594)
+>-![Storyboard](https://github.com/user-attachments/assets/ee1bb48c-fa26-4086-8a49-0534a7624594)
 
-##### Functional Requirements
+## Functional Requirements
 
 **Search & Navigation** FR-01: Location Search
 - System shall allow users to search breweries by state codes
