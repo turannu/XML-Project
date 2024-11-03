@@ -59,14 +59,14 @@
 ## Scrum Rules
 - Product Owner: Neetu Turan
 - DevOps: Aliu Adekunle
--Integration Developer: Adenike Adeniran
+- Integration Developer: Adenike Adeniran
 
 ## Weekly Team Members Meetings
 Fridays (In person),
 Saturdays (Teams).
 
  ## Weekly Meeting Time
- Fridays: 5:00pm to 6:00pm.
+ Fridays: 5:00pm to 6:00pm,
  Saturdays: 1:00pm to 2:00pm.
  
 >  
