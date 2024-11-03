@@ -23,11 +23,11 @@
 ### Team Composition
 > Neetu Turan - Product Owner,
 > Aliu Adekunle - Developer,
-> Adenike Adeniran - UI/UX,
+> Adenike Adeniran - UI/UX.
 
 ### Weekly Team Members Meetings
 > Fridays (In person), 
-> Saturdays (Virtual Session)
+> Saturdays (Virtual Session).
 >
  ### Weekly Meeting Time
 > Fridays: 5:00pm to 6:00pm,
