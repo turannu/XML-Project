@@ -59,7 +59,7 @@
 ## Scrum Rules
 - Product Owner: Neetu Turan
 - DevOps: Aliu Adekunle
-- Adenike Adeniran:  Integration Developer.
+-Integration Developer: Adenike Adeniran
 
 ## Weekly Team Members Meetings
 Fridays (In person),
