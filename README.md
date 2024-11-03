@@ -25,6 +25,9 @@
 > Aliu Adekunle - Developer,
 > Adenike Adeniran - UI/UX,
 
+### Weekly Team Members Meetings
+> Fridays (In person) 
+> Saturdays (Virtual Session)
+>
 
->  
 > 
