@@ -24,17 +24,19 @@
 
 >-![Storyboard](https://github.com/user-attachments/assets/ee1bb48c-fa26-4086-8a49-0534a7624594)
 
-## Functional Requirements 1
+## Functional Requirements 
 
-**Scenerio**
+### Requirements 1: search For Sip- and Bites Location
+
+#### Scenario
 
 As a user, I want to be able to search for and navigate for any sip-and-bites location around me, filtering based on preferences 
 
-**Dependencies**
+#### Dependencies
 
 Navigation data are avaialble and accessible.
 
-**Example**
+#### Assumptions
 
 1.1
 
@@ -54,40 +56,37 @@ Then I shoud be able to see locations that sell variety of alcoholic beverages,
 
 such as beer, cider, wine, and sometimes spirits
 
-**Search & Navigation** FR-01: Location Search
+#### Search & Navigation for Requirement 1: Location Search
 - System shall allow users to search breweries by state codes
 - System shall provide a dropdown/list of valid state codes
 - System shall must validate state code inputs
-  
-**Category Filtering** FR-02
 
-### Functional Requirement 2:
+###  Requirement 2: Select from Listed Options 
 
 #### Scenario
 
 As a user, I want to filter breweries by their beer styles (Breweries, Cideries ,Brewpubs, etc.), so that I can find breweries that make my preferred beer types.
 
- #### Dependencies
-Establishment locations on a map
-Get Directions from map
-Differents Locations Display
+#### Dependencies
+Establishment locations on a map.
+Get Access to Directions from map.
+View differents Locations Display.
 
-#### Assumptions  
-- System shall allow filtering by establishment type
-   -Breweries
-   -Cideries
-   -Brewpubs
-   -Bottleshops
+#### Assumptions
+- System shall allow filtering by establishment type: 
+   Breweries,
+   Cideries,
+   Brewpubs,
+   Bottleshops,
 
-  **Given** a list of preference of listed beers available 
+**Given**
+- A list of preference of listed beers available
+     
 **When**  
--	Select the Beers based on your Favourites or Peferences
+- Select the Beers based on your Favourites or Peferences
 
-  
-**Then**  when I navigate the result should display, organized list of Establishment Name, Category/type, Address, Operating hours,  Contact Information
-
-
-
+**Then** 
+- When I navigate the result should display, organized list of Establishment Name, Category/type, Address, Operating hours, Contact Information.
 
 
 **Technical Requirements** FR-05 API Integration
