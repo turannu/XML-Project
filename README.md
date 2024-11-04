@@ -58,7 +58,7 @@
 >![Screenshot 2024-11-03 185611](https://github.com/user-attachments/assets/ec4735a0-4757-4be3-8e5f-d949d505c904)
 >
 >![Screenshot 2024-11-03 185805](https://github.com/user-attachments/assets/64567267-2424-4d93-93cc-19b4a4f9d938)
----
+>---
 >1.2
 >   **Given** data of brewery is available  
 >
