@@ -2,7 +2,7 @@
 ---
 >
 ## Introduction
->Do you remember when was your last vacation? Do you know where to go for best Sips and Bites? Our Web app can help you choose a destination which provides information on active breweries, cideries, brewpubs, and bottleshops.
+>Sips and Bites is your ultimate guide to an extraordinary culinary adventure. Here, you can explore a wide range of breweries and gastronomic delights, crafted to satisfy your palate and spark your curiosity. Whether you're a connoisseur of craft brews or an enthusiast of exquisite bites, Sips and Bites provides the perfect blend of taste and discovery. Dive into a world where every sip tells a story and every bite is a new experience. Welcome to a journey of flavors!
 >
 >- Provides you state codes for easy search by category  
 >- Best Breweries
