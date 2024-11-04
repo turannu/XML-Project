@@ -77,7 +77,7 @@
 
 
 ---
-## Technical Requirements:  FR-05 API Integration
+## Technical Requirements:  
 >- System shall integrate with brewery database API
 >- System shall maintain data Accuracy
 ---
