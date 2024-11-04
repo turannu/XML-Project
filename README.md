@@ -15,9 +15,9 @@
 ## Data Feeds:-
 
 >- <Brewery Data Source>https://www.openbrewerydb.org/
-
+>
 >- <google api> https://console.cloud.google.com/apis/library 
-
+>
 >- <US States Data>https://worldpopulationreview.com/static/states/abbr-name-list.json
 ---
 ## Project Board:-
@@ -28,42 +28,45 @@
 > ![Storyboard](https://github.com/user-attachments/assets/ee1bb48c-fa26-4086-8a49-0534a7624594)
 ---
 
-## Functional Requirements 
+## Functional Requirements :
+> Provide users with the capability to search for breweries based on their state or city input.
 
-### Requirements 1: search For Sip- and Bites Location
+### Requirements 100.0: Search Breweries by State or City :
 
-#### Scenario
+#### Scenario:
+> As a user interested in breweries, I want to be able to search for breweries based on any part of the name: brewery name, state, city,type so that I can find breweries that match my interest.
+#### Dependencies :
 
->-As a user, I want to be able to search for and navigate for any sip-and-bites location around me, filtering based on preferences 
+> Brewery  data are avaialble and accessible.
+>
+> USA states are available and accessible.
+
+#### Assumptions :
+> Breweries Name are in English
+>
+>  US states are in English
+
+
+#### Examples 
+>1.1
+>  **Given** data of brewery is available  
+>
+>   **When**  I search for “Texas”  
+>
+>   **Then** I should receive at least one result with these attributes:  
+>
+>![Screenshot 2024-11-03 185611](https://github.com/user-attachments/assets/ec4735a0-4757-4be3-8e5f-d949d505c904)
+>
+>![Screenshot 2024-11-03 185805](https://github.com/user-attachments/assets/64567267-2424-4d93-93cc-19b4a4f9d938)
 ---
-#### Dependencies
-
->-Navigation data are avaialble and accessible.
---
-#### Assumptions
-
-1.1
-
-Based on the available data
-
-When I search for breweries
-
-I should be able to see different varieties and then navigate through them
-
-1.2
-
-Given the data available
-
-When I search for Bottleshops, 
-
-Then I shoud be able to see locations that sell variety of alcoholic beverages,
-
-such as beer, cider, wine, and sometimes spirits
-
-#### Search & Navigation for Requirement 1: Location Search
-- System shall allow users to search breweries by state codes
-- System shall provide a dropdown/list of valid state codes
-- System shall must validate state code inputs
+>1.2
+>   **Given** data of brewery is available  
+>
+>   **When**  I search for “brewpub”  
+>
+>   **Then** I should receive at least one result with these attributes:  
+>![Screenshot 2024-11-03 190550](https://github.com/user-attachments/assets/b5eda1f0-9b47-40e5-8ccb-fe273cd35aae)
+>
 
 ###  Requirement 2: Select from Listed Options 
 
