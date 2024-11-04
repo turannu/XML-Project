@@ -1,4 +1,3 @@
----
 # Sips & Bites Navigator
 ---
 >
