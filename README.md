@@ -39,7 +39,7 @@
 
 > Brewery  data are avaialble and accessible.
 >
-> USA states are available and accessible.
+> USA states data are available and accessible.
 
 #### Assumptions :
 > Breweries Name are in English
