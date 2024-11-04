@@ -67,33 +67,14 @@
 >   **Then** I should receive at least one result with these attributes:  
 >![Screenshot 2024-11-03 190550](https://github.com/user-attachments/assets/b5eda1f0-9b47-40e5-8ccb-fe273cd35aae)
 >
+>1.3  
+>**Given** a data of brewey is available
+>
+>**When** I search for “sklujapouetllkjsda;u”
+>
+>**Then** I should receive zero results (an empty list)  
 
-###  Requirement 2: Select from Listed Options 
 
-#### Scenario
-
-As a user, I want to filter breweries by their beer styles (Breweries, Cideries ,Brewpubs, etc.), so that I can find breweries that make my preferred beer types.
-
-#### Dependencies
-Establishment locations on a map.
-Get Access to Directions from map.
-View differents Locations Display.
-
-#### Assumptions
-- System shall allow filtering by establishment type: 
-   Breweries,
-   Cideries,
-   Brewpubs,
-   Bottleshops,
-
-**Given**
-- A list of preference of listed beers available
-     
-**When**  
-- Select the Beers based on your Favourites or Peferences
-
-**Then** 
-- When I navigate the result should display, organized list of Establishment Name, Category/type, Address, Operating hours, Contact Information.
 
 ---
 ## Technical Requirements:  FR-05 API Integration
