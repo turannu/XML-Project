@@ -14,6 +14,13 @@ namespace XML_Project.Pages
 
         public void OnGet()
         {
+            string brand = "Sips and Bites  Navigator";
+            string inBrand = Request.Query["Brand"];
+            if (inBrand != null && inBrand.Length > 0)
+            {
+                brand = inBrand;
+            }
+            ViewData["Brand"] = brand;
 
         }
     }
