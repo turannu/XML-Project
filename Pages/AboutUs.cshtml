@@ -1,0 +1,86 @@
+﻿@page
+@model XML_Project.Pages.AboutUsModel
+@{
+    ViewData["Title"] = "About Sips and Bites Navigator";
+}
+
+<div class="container">
+    <div class="header">
+        <h1>Contact Sips and Bites Navigator</h1>
+        <p>Your feedback and inquiries are important to us!</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="contact-info">
+                <h2>Reach Out</h2>
+                <p><i class="fas fa-map-marker-alt"></i> 456 Brew Lane, Hop City, USA 12345</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+1234567890">(123) 456-7890</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@sipsandbitesnavigator.com">info@sipsandbitesnavigator.com</a></p>
+                <p><i class="fas fa-clock"></i> Mon-Fri: 10am-8pm, Sat-Sun: 12pm-6pm</p>
+            </div>
+
+            <div class="social-media">
+                <h3>Connect with Us</h3>
+                <a href="https://www.facebook.com/your-facebook-page" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://www.instagram.com/your-instagram-account" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/your-twitter-handle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+    
+</div>
+
+<style>
+    .container {
+        max-width: 1000px;
+        margin: 40px auto;
+        background-color: #ffffff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .header {
+        background-image: url('https://source.unsplash.com/1600x400/?coffee,cafe');
+        color: #fff;
+        padding: 40px 0;
+        text-align: center;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .contact-info, .map-section, .social-media {
+        padding: 30px;
+    }
+
+        .contact-info i, .social-media i {
+            color: #ff8c00;
+            margin-right: 10px;
+        }
+
+        .social-media a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.5em;
+        }
+
+            .social-media a:hover {
+                color: #ff8c00;
+            }
+
+    .map-container {
+        height: 300px;
+        background-color: #e9ecef;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
