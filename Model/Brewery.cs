@@ -11,12 +11,6 @@
         public string Phone { get; set; }
         public string WebsiteUrl { get; set; }
 
-        // Foreign Keys
-        public int StateId { get; set; } // Links to State
-        public state? State { get; set; } // Navigation Property
-
-        // Optional: Additional Location Info from Google API
-        public int? GoogleApiDataId { get; set; }
-        public GoogleApiData GoogleApiData { get; set; } // One-to-One Relationship with Google API Data
+   
     }
 }
