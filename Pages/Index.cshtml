@@ -1,10 +1,33 @@
 ﻿@page
+@using SipsBites
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Sips and Bites Navigator";
+    var brand = ViewData["Brand"];
+    List<Brewery> breweries = (List<Brewery>) ViewData["Breweries"];
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to @brand</h1>
+    <p>Enjoy Best Food and Drinks in USA</p>
+        <ul>
+            <li>Search Brewery Names </li>
+            <li>Search Brewery brewery_type</li>
+        </ul>
+    <table>
+        <tr>
+            <th>name</th>
+            <th>brewery_type</th>
+        </tr
+        @{
+            foreach(Brewery brewery in breweries)
+         {
+        <tr>
+            <td>@brewery.Name</td>
+            <td>@brewery.BreweryType</td>
+        </tr>
+         }
+        }
+    </table>
+
 </div>
