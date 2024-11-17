@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/USStateElement"
+    },
+    "definitions": {
+        "USStateElement": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "name"
+            ],
+            "title": "USStateElement"
+        }
+    }
+}
