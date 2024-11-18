@@ -8,38 +8,37 @@
 }
 
 <div class="text-center">
-    <div>
+    <div class="header">
         <h1 class="display-4">Welcome to @brand</h1>
-        <p>Enjoy Best Food and Drinks in USA</p>
-        <ul>
+        <h2>Enjoy Best Food and Drinks in USA</h2>
+        <ul class="inline-list">
             <li>Search Brewery Names </li>
             <li>Search Brewery brewery_type</li>
         </ul>
-    </div>
-
-    <div>
-
-    </div> 
-               
+    </div>      
     <div>
         <table>
-            <tr>
-                <th>name</th>
-                <th>brewery_type</th>
-                <th>state</th>
-                <th>street</th>
-            </tr>
-            @{
-                foreach(Brewery brewery in breweries)
-             {
-            <tr>
-                <td>@brewery.Name</td>
-                <td>@brewery.BreweryType</td>
-                <td>@brewery.StateProvince</td>
-                <td>@brewery.Address1</td>
-            </tr>
-             }
-            }
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Brewery Type</th>
+                    <th>State</th>
+                    <th>Street</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach(Brewery brewery in breweries)
+                 {
+                <tr>
+                    <td>@brewery.Name</td>
+                    <td>@brewery.BreweryType</td>
+                    <td>@brewery.StateProvince</td>
+                    <td>@brewery.Address1</td>
+                </tr>
+                 }
+                }
+            </tbody>
         </table>
     </div>
 </div>
