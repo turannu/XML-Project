@@ -1,0 +1,153 @@
+﻿@page
+@model XML_Project.Pages.ReviewModel
+@{
+}
+<style>
+
+    /* General form styling */
+
+    #reviewForm {
+
+        width: 100%;
+
+        max-width: 500px;
+
+        margin: 20px auto;
+
+        padding: 20px;
+
+        border: 1px solid #ccc;
+
+        border-radius: 8px;
+
+        background-color: #f9f9f9;
+
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        font-family: Arial, sans-serif;
+
+    }
+ 
+    #reviewForm textarea,
+
+    #reviewForm select,
+
+    #reviewForm button {
+
+        width: 100%;
+
+        margin-top: 10px;
+
+        margin-bottom: 10px;
+
+        padding: 10px;
+
+        border-radius: 4px;
+
+        border: 1px solid #ccc;
+
+        font-size: 14px;
+
+    }
+ 
+    #reviewForm textarea {
+
+        resize: none;
+
+        height: 100px;
+
+    }
+ 
+    #reviewForm button {
+
+        background-color: #007bff;
+
+        color: white;
+
+        border: none;
+
+        cursor: pointer;
+
+        transition: background-color 0.3s ease;
+
+        font-weight: bold;
+
+    }
+ 
+    #reviewForm button:hover {
+
+        background-color: #0056b3;
+
+    }
+ 
+    #reviewForm label {
+
+        font-weight: bold;
+
+        font-size: 14px;
+
+        margin-top: 10px;
+
+        display: inline-block;
+
+    }
+ 
+    /* Add responsiveness */
+
+
+</style>
+ 
+<form id="reviewForm">
+<h2 style="text-align: center; color: #333;">Write a Review</h2>
+<input type="hidden" id="breweryId" value="BREWERY_ID_HERE" />
+<label for="reviewText">Your Review</label>
+<textarea id="reviewText" placeholder="Share your experience..."></textarea>
+<label for="rating">Rating</label>
+<select id="rating">
+<option value="1">1 - Poor</option>
+<option value="2">2 - Fair</option>
+<option value="3">3 - Good</option>
+<option value="4">4 - Very Good</option>
+<option value="5">5 - Excellent</option>
+</select>
+<button type="button" onclick="submitReview()">Submit Review</button>
+</form>
+ 
+<script>
+
+    async function submitReview() {
+
+        const review = {
+
+            breweryId: document.getElementById("breweryId").value,
+
+            reviewText: document.getElementById("reviewText").value,
+
+            rating: document.getElementById("rating").value
+
+        };
+ 
+        const response = await fetch('/api/review', {
+
+            method: 'POST',
+
+            headers: { 'Content-Type': 'application/json' },
+
+            body: JSON.stringify(review)
+
+        });
+ 
+        if (response.ok) {
+
+            alert("Review submitted!");
+
+        } else {
+
+            alert("Failed to submit review.");
+
+        }
+
+    }
+</script>
+
+ 

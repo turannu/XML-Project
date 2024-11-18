@@ -1,5 +1,6 @@
-﻿namespace XML_Project.Model
+﻿namespace BreweryReviews.Model
 {
+
     public class Brewery
     {
         public int Id { get; set; } // Primary Key
