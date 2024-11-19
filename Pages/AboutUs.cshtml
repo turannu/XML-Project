@@ -4,40 +4,57 @@
     ViewData["Title"] = "About us - Sips and Bites Navigator";
 }
 
-<div class="container">
-    <div class="header">
-        <h1>About us - Sips and Bites Navigator</h1>
-        <div class="side-by-side">
-            <div class="box text-center"> Welcome to our company! We are committed to delivering exceptional services and creating meaningful relationships with our clients.</div>
-            <div class="box text-center">Our team is dedicated to innovation, integrity, and excellence. We believe in empowering our customers with the best solutions tailored to their needs.</div>
-            <div class="box text-center">Your feedback and inquiries are important to us!</div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6">
-            <div class="contact-info">
-                <h2>Reach Out</h2>
-                <ul class="contact-details">
-                    <li><i class="fas fa-map-marker-alt"></i> 456 Brew Lane, Hop City, USA 12345</li>
-                    <li><i class="fas fa-phone"></i> <a href="tel:+1234567890">(123) 456-7890</a></li>
-                    <li><i class="fas fa-envelope"></i> <a href="mailto:info@sipsandbitesnavigator.com">info@sipsandbitesnavigator.com</a></li>
-                    <li><i class="fas fa-clock"></i> Mon-Fri: 10am-8pm, Sat-Sun: 12pm-6pm</li>
-                </ul>
+@try
+{
+    <div class="container">
+        <div class="header">
+            <h1>About us - Sips and Bites Navigator</h1>
+            <div class="side-by-side">
+                <div class="box text-center">
+                    Welcome to our company! We are committed to delivering exceptional services and creating meaningful relationships with our clients.
+                </div>
+                <div class="box text-center">
+                    Our team is dedicated to innovation, integrity, and excellence. We believe in empowering our customers with the best solutions tailored to their needs.
+                </div>
+                <div class="box text-center">
+                    Your feedback and inquiries are important to us!
+                </div>
             </div>
-
-            <div class="social-media">
-                <h3>Connect with Us</h3>
-                <a href="https://www.facebook.com/your-facebook-page" target="_blank" aria-label="Follow us on Facebook" role="link"><i class="fab fa-facebook-square"></i></a>
-                <a href="https://www.instagram.com/your-instagram-account" target="_blank" aria-label="Follow us on Instagram" role="link"><i class="fab fa-instagram"></i></a>
-                <a href="https://twitter.com/your-twitter-handle" target="_blank" aria-label="Follow us on Twitter" role="link"><i class="fab fa-twitter-square"></i></a>
-            </div>
-
         </div>
-    </div>
 
-    <br />
-</div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="contact-info">
+                    <h2>Reach Out</h2>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-map-marker-alt"></i> 456 Brew Lane, Hop City, USA 12345</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+1234567890">(123) 456-7890</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@sipsandbitesnavigator.com">info@sipsandbitesnavigator.com</a></li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 10am-8pm, Sat-Sun: 12pm-6pm</li>
+                    </ul>
+                </div>
+
+                <div class="social-media">
+                    <h3>Connect with Us</h3>
+                    <a href="https://www.facebook.com/your-facebook-page" target="_blank" aria-label="Follow us on Facebook" role="link"><i class="fab fa-facebook-square"></i></a>
+                    <a href="https://www.instagram.com/your-instagram-account" target="_blank" aria-label="Follow us on Instagram" role="link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/your-twitter-handle" target="_blank" aria-label="Follow us on Twitter" role="link"><i class="fab fa-twitter-square"></i></a>
+                </div>
+
+            </div>
+        </div>
+
+        <br />
+    </div>
+}
+catch (Exception ex)
+{
+    <div class="error-message">
+        <h2>Sorry, something went wrong while loading this page.</h2>
+        <p>Please try again later or contact support.</p>
+        <p>Error details: @ex.Message</p>
+    </div>
+}
 
 <style>
     .container {
@@ -122,7 +139,14 @@
         align-items: center; /* Centers the content vertically */
         color: #333;
     }
-</style>
 
+    .error-message {
+        background-color: #f8d7da;
+        color: #721c24;
+        padding: 20px;
+        border: 1px solid #f5c6cb;
+        border-radius: 5px;
+    }
+</style>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
