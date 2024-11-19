@@ -26,6 +26,8 @@
                     <th>Street</th>
                 </tr>
             </thead>
+            @if (breweries != null && breweries.Any())
+            {
             <tbody>
                 @{
                     foreach(Brewery brewery in breweries)
@@ -39,6 +41,11 @@
                  }
                 }
             </tbody>
+            }
+            else
+            {
+                <p>No breweries available to display.</p>
+            }
         </table>
     </div>
 </div>
