@@ -17,28 +17,29 @@
         </ul>
     </div>      
     <div>
-        <table>
+        <table role="table" aria-label="Brewery Information Table">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Brewery Type</th>
-                    <th>State</th>
-                    <th>Street</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Brewery Type</th>
+                    <th scope="col">State</th>
+                    <th scope="col">Street</th>
                 </tr>
             </thead>
             <tbody>
                 @{
-                    foreach(Brewery brewery in breweries)
-                 {
-                <tr>
-                    <td>@brewery.Name</td>
-                    <td>@brewery.BreweryType</td>
-                    <td>@brewery.StateProvince</td>
-                    <td>@brewery.Address1</td>
-                </tr>
-                 }
+                    foreach (Brewery brewery in breweries)
+                    {
+                        <tr>
+                            <td>@brewery.Name</td>
+                            <td>@brewery.BreweryType</td>
+                            <td>@brewery.StateProvince</td>
+                            <td>@brewery.Address1</td>
+                        </tr>
+                    }
                 }
             </tbody>
         </table>
+
     </div>
 </div>
