@@ -3,21 +3,26 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Sips and Bites Navigator";
-    var brand = ViewData["Brand"];
-    List<Brewery> breweries = (List<Brewery>) ViewData["Breweries"];
+    var siteBrand = ViewData["Brand"];
+    List<Brewery> breweryList = (List<Brewery>) ViewData["Breweries"];
 }
 
 <div class="text-center">
-    <div class="header">
-        <h1 class="display-4">Welcome to @brand</h1>
+    <header class="header">
+        <h1 class="display-4">Welcome to @siteBrand</h1>
         <h2>Enjoy Best Food and Drinks in USA</h2>
         <ul class="inline-list">
             <li>Search Brewery Names </li>
             <li>Search Brewery brewery_type</li>
         </ul>
-    </div>      
+    </header>      
     <div>
-        <table>
+       
+
+   <div>
+        <section>
+     
+            <table class="table">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -28,17 +33,19 @@
             </thead>
             <tbody>
                 @{
-                    foreach(Brewery brewery in breweries)
+                    foreach(Brewery brewery in breweryList)
                  {
                 <tr>
-                    <td>@brewery.Name</td>
-                    <td>@brewery.BreweryType</td>
-                    <td>@brewery.StateProvince</td>
-                    <td>@brewery.Address1</td>
+                    <td data-label="Name">@brewery.Name</td>
+            <td data-label="Brewery Type">@brewery.BreweryType</td>
+            <td data-label="State">@brewery.StateProvince</td>
+            <td data-label="Street">@brewery.Address1</td>
                 </tr>
                  }
                 }
             </tbody>
         </table>
+        </section>
+
     </div>
 </div>
