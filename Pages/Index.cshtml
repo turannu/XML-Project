@@ -4,8 +4,9 @@
 @{
     ViewData["Title"] = "Sips and Bites Navigator";
     var brand = ViewData["Brand"];
-    List<Brewery> breweries = (List<Brewery>) ViewData["Breweries"];
+    IEnumerable<Brewery> breweries = (IEnumerable<Brewery>)ViewData["Breweries"]; 
 }
+
 
 <div class="text-center">
     <div class="header">
