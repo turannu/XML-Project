@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
     <title>@ViewData["Title"] - XML_Project</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -10,7 +11,8 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+      
+            <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3" role="navigation" aria-label="Main navigation">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">Sips & Bites</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -44,13 +46,13 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - XML_Project - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; @DateTime.Now.Year - XmlProject - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js" defer></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="~/js/site.js" asp-append-version="true" defer></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
