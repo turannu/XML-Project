@@ -27,17 +27,17 @@
                                 <label for="breweryType" class="form-label">Brewery Type</label>
                                 <select class="form-select" id="breweryType" name="BreweryType">
                                     <option value="">Select type</option>
-                                    <option value="micro" selected="@(Model.BreweryType == "micro")">Micro</option>
-                                    <option value="nano" selected="@(Model.BreweryType == "nano")">Nano</option>
-                                    <option value="regional" selected="@(Model.BreweryType == "regional")">Regional</option>
-                                    <option value="brewpub" selected="@(Model.BreweryType == "brewpub")">Brewpub</option>
-                                    <option value="large" selected="@(Model.BreweryType == "large")">Large</option>
-                                    <option value="planning" selected="@(Model.BreweryType == "planning")">Planning</option>
-                                    <option value="bar" selected="@(Model.BreweryType == "bar")">Bar</option>
-                                    <option value="contract" selected="@(Model.BreweryType == "contract")">Contract</option>
-                                    <option value="proprietor" selected="@(Model.BreweryType == "proprietor")">Proprietor</option>
-                                    <option value="closed" selected="@(Model.BreweryType == "closed")">Closed</option>
+                                    @foreach (var type in new[] { "micro", "nano", "regional", "brewpub", "large", "planning", "bar", "contract", "proprietor", "closed" })
+                                    {
+                                        var isSelected = Model.BreweryType == type ? "selected" : "";
+                                        var displayName = char.ToUpper(type[0]) + type.Substring(1).ToLower();
+                                        @Html.Raw($"<option value='{type}' {isSelected}>{displayName}</option>")
+                                    }
                                 </select>
+
+
+
+
                             </div>
                         </div>
                         <div class="text-center">

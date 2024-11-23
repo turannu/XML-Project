@@ -4,7 +4,7 @@
 @{
     ViewData["Title"] = "Sips and Bites Navigator";
     var brand = ViewData["Brand"];
-    List<Brewery> breweries = (List<Brewery>) ViewData["Breweries"];
+    List<Brewery> breweries = (List<Brewery>)ViewData["Breweries"];
 }
 
 <div class="text-center">
@@ -15,28 +15,64 @@
             <li>Search Brewery Names </li>
             <li>Search Brewery brewery_type</li>
         </ul>
-    </div>      
+    </div>
+
+    <form method="get" action="/Search" class="mb-4">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="state" class="form-label">State</label>
+                <input type="text"
+                       class="form-control"
+                       id="state"
+                       name="State"
+                       placeholder="Enter state name (e.g. California)">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="breweryType" class="form-label">Brewery Type</label>
+                <select class="form-select" id="breweryType" name="BreweryType">
+                    <option value="">Select type</option>
+                    <option value="micro">Micro</option>
+                    <option value="nano">Nano</option>
+                    <option value="regional">Regional</option>
+                    <option value="brewpub">Brewpub</option>
+                    <option value="large">Large</option>
+                    <option value="planning">Planning</option>
+                    <option value="bar">Bar</option>
+                    <option value="contract">Contract</option>
+                    <option value="proprietor">Proprietor</option>
+                    <option value="closed">Closed</option>
+                </select>
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
+
+
+
     <div>
-        <table>
+        <table role="table" class="table table-striped">
+            <caption>List of Breweries</caption>
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Brewery Type</th>
-                    <th>State</th>
-                    <th>Street</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Brewery Type</th>
+                    <th scope="col">State</th>
+                    <th scope="col">Street</th>
                 </tr>
             </thead>
             <tbody>
                 @{
-                    foreach(Brewery brewery in breweries)
-                 {
-                <tr>
-                    <td>@brewery.Name</td>
-                    <td>@brewery.BreweryType</td>
-                    <td>@brewery.StateProvince</td>
-                    <td>@brewery.Address1</td>
-                </tr>
-                 }
+                    foreach (Brewery brewery in breweries)
+                    {
+                        <tr>
+                            <td>@brewery.Name</td>
+                            <td>@brewery.BreweryType</td>
+                            <td>@brewery.StateProvince</td>
+                            <td>@brewery.Address1</td>
+                        </tr>
+                    }
                 }
             </tbody>
         </table>
