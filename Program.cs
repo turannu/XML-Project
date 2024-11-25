@@ -1,10 +1,16 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using XML_Project.Data;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddHttpClient();
+builder.Services.AddDbContext<XML_ProjectContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("XML_ProjectContext") ?? throw new InvalidOperationException("Connection string 'XML_ProjectContext' not found.")));
 builder.Services.AddControllersWithViews();
 
 //builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));

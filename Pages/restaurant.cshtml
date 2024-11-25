@@ -1,0 +1,48 @@
+﻿@page
+@model XML_Project.Pages.restaurantModel
+@{
+    ViewData["Title"] = "Restaurant Search";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Restaurant Search</h1>
+    <ul class="inline-list">
+        <li>Find restaurants</li>
+        <li>View restaurant details</li>
+        <li>Explore locations</li>
+    </ul>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State/Province</th>
+                <th>Country</th>
+                
+                
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Restaurants != null && Model.Restaurants.Any())
+            {
+                @foreach (var restaurant in Model.Restaurants)
+                {
+                    <tr>
+                        <td>@restaurant.Name</td>
+                        <td>@restaurant.Address</td>
+                        <td>@restaurant.City</td>
+                        <td>@restaurant.Province</td>
+                        <td>@restaurant.Country</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="9">No restaurants available to display.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

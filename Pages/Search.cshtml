@@ -1,43 +1,58 @@
 ﻿@page
 @model XML_Project.Pages.SearchModel
+
 @{
-    ViewData["Title"] = "Search Breweries";
+    ViewData["Title"] = "Search Breweries and Restaurants";
 }
 
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center mt-4">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h2 class="text-center">Search Breweries</h2>
+                    <h2 class="text-center">Search Breweries and Restaurants</h2>
                 </div>
                 <div class="card-body">
                     <form method="get" class="mb-4">
                         <div class="row">
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-3 mb-3">
                                 <label for="state" class="form-label">State</label>
-                                <input type="text"
-                                       class="form-control"
-                                       id="state"
-                                       name="State"
-                                       value="@Model.State"
-                                       placeholder="Enter state name (e.g. California)">
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="breweryType" class="form-label">Brewery Type</label>
-                                <select class="form-select" id="breweryType" name="BreweryType">
-                                    <option value="">Select type</option>
-                                    @foreach (var type in new[] { "micro", "nano", "regional", "brewpub", "large", "planning", "bar", "contract", "proprietor", "closed" })
+                                <select asp-for="State" class="form-select" id="state" onchange="this.form.submit()">
+                                    <option value="">Select a state</option>
+                                    @foreach (var state in Model.USStates.OrderBy(s => s.Name))
                                     {
-                                        var isSelected = Model.BreweryType == type ? "selected" : "";
-                                        var displayName = char.ToUpper(type[0]) + type.Substring(1).ToLower();
-                                        @Html.Raw($"<option value='{type}' {isSelected}>{displayName}</option>")
+                                        <option value="@state.Name">@state.Name</option>
                                     }
                                 </select>
-
-
-
-
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="city" class="form-label">City</label>
+                                <select asp-for="City" class="form-select" id="city">
+                                    <option value="">Select a city</option>
+                                    @foreach (var city in Model.AvailableCities)
+                                    {
+                                        <option value="@city">@city</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="breweryType" class="form-label">Brewery Type</label>
+                                <select asp-for="BreweryType" class="form-select" id="breweryType">
+                                    <option value="">Select a brewery type</option>
+                                    <option value="micro">Micro</option>
+                                    <option value="nano">Nano</option>
+                                    <option value="regional">Regional</option>
+                                    <option value="brewpub">Brewpub</option>
+                                    <option value="large">Large</option>
+                                    <option value="planning">Planning</option>
+                                    <option value="bar">Bar</option>
+                                    <option value="contract">Contract</option>
+                                    <option value="proprietor">Proprietor</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="searchTerm" class="form-label">Search Term</label>
+                                <input asp-for="SearchTerm" class="form-control" id="searchTerm" placeholder="Search by name" />
                             </div>
                         </div>
                         <div class="text-center">
@@ -45,43 +60,92 @@
                         </div>
                     </form>
 
-                    @if (Model.SearchResults.Any())
+                    @if (Model.SearchResults.Any() || Model.Restaurants.Any())
                     {
-                        <div class="table-responsive">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Type</th>
-                                        <th>City</th>
-                                        <th>State</th>
-                                        <th>Website</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach (var brewery in Model.SearchResults)
-                                    {
-                                        <tr>
-                                            <td>@brewery.Name</td>
-                                            <td>@brewery.BreweryType</td>
-                                            <td>@brewery.City</td>
-                                            <td>@brewery.StateProvince</td>
-                                            <td>
-                                                @if (!string.IsNullOrEmpty(brewery.WebsiteUrl?.ToString()))
+                        <div class="row">
+                            @if (Model.SearchResults.Any())
+                            {
+                                <div class="col-md-6">
+                                    <h3>Brewery Results (@Model.SearchResults.Count)</h3>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Type</th>
+                                                    <th>City</th>
+                                                    <th>State</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var brewery in Model.SearchResults)
                                                 {
-                                                    <a href="@brewery.WebsiteUrl.ToString()" target="_blank" class="btn btn-link">Visit</a>
+                                                    <tr>
+                                                        <td>@brewery.Name</td>
+                                                        <td>@brewery.BreweryType</td>
+                                                        <td>@brewery.City</td>
+                                                        <td>@brewery.State</td>
+                                                        <td>
+                                                            @if (!string.IsNullOrEmpty(brewery.WebsiteUrl?.ToString()))
+                                                            {
+                                                                <a href="@brewery.WebsiteUrl.ToString()" target="_blank" class="btn btn-sm btn-info">Website</a>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span class="text-muted">No Website</span>
+                                                            }
+                                                        </td>
+                                                    </tr>
                                                 }
-                                            </td>
-                                        </tr>
-                                    }
-                                </tbody>
-                            </table>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            }
+
+                            @if (Model.Restaurants.Any())
+                            {
+                                <div class="col-md-6">
+                                    <h3>Restaurant Results (@Model.Restaurants.Count)</h3>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>City</th>
+                                                    <th>State</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var restaurant in Model.Restaurants)
+                                                {
+                                                    <tr>
+                                                        <td>@restaurant.Name</td>
+                                                        <td>@restaurant.City</td>
+                                                        <td>@Model.GetStateNameByAbbreviation(restaurant.Province)</td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            }
                         </div>
                     }
-                    else if (Model.State != null || Model.BreweryType != null)
+                    else if (!string.IsNullOrEmpty(Model.State) ||
+                    !string.IsNullOrEmpty(Model.City) ||
+                    !string.IsNullOrEmpty(Model.BreweryType) ||
+                    !string.IsNullOrEmpty(Model.SearchTerm))
                     {
                         <div class="alert alert-info mt-3">
-                            No breweries found matching your search criteria.
+                            No results found matching your search criteria.
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-warning mt-3">
+                            Please select search criteria to find breweries and restaurants.
                         </div>
                     }
                 </div>

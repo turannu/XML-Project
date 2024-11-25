@@ -5,6 +5,7 @@
     using System.Globalization;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
+    using SipsBites;
 
     public partial class Brewery
     {

@@ -1,0 +1,42 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/RestaurantUsaElement"
+    },
+    "definitions": {
+        "RestaurantUsaElement": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ID": {
+                    "type": "integer"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "province": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ID",
+                "address",
+                "city",
+                "country",
+                "name",
+                "province"
+            ],
+            "title": "RestaurantUsaElement"
+        }
+    }
+}
