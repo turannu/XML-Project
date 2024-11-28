@@ -53,7 +53,7 @@ namespace XML_Project.Pages
         }
 
         private void PopulateAvailableCities()
-{
+{    //By help of AI
     // If a state is selected, show cities only for that state
     if (!string.IsNullOrEmpty(State))
     {

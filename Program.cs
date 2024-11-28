@@ -8,6 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddHttpClient();
 builder.Services.AddDbContext<XML_ProjectContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("XML_ProjectContext") ?? throw new InvalidOperationException("Connection string 'XML_ProjectContext' not found.")));
@@ -33,6 +36,10 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id}");
 
 
 app.Run();
