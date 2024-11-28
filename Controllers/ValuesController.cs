@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SipsBites;
 using XML_Project.Pages;
+using System;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -30,20 +31,23 @@ namespace XML_Project.Controllers
 
         // POST api/<ValuesController>
         [HttpPost]
-        public void Post([FromBody] Brewery value)
+        public void Post([FromBody] Brewery brewery)
         {
+            Console.WriteLine(brewery);
         }
 
         // PUT api/<ValuesController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Brewery value)
+        public void Put(int id, [FromBody] Brewery brewery)
         {
+            Console.WriteLine(brewery);
         }
 
         // DELETE api/<ValuesController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            Console.WriteLine(id);
         }
     }
 }
