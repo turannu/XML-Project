@@ -6,12 +6,18 @@
 
 <div class="abouts-us-container">
     <div class="header">
-        <h1>About us - Sips and Bites Navigator</h1>
-        <div class="side-by-side">         
-            <div class="box text-center"> Welcome to our company! We are committed to delivering exceptional services and creating meaningful relationships with our clients.</div>
-            <div class="box text-center">Our team is dedicated to innovation, integrity, and excellence. We believe in empowering our customers with the best solutions tailored to their needs.</div>
-            <div class="box text-center">Your feedback and inquiries are important to us!</div>
-        </div>
+        <h1 class="text-center">About us - Sips and Bites Navigator</h1>   
+    </div>
+
+    <div class="text-center image-container">
+        <img src="/images/brewery_photo.jpg" alt="Placeholder Image" class="img-fluid" style="width: 100%;">
+    </div>
+
+
+    <div class="side-by-side">
+        <div class="box text-center"> Welcome to our company! We are committed to delivering exceptional services and creating meaningful relationships with our clients.</div>
+        <div class="box text-center">Our team is dedicated to innovation, integrity, and excellence. We believe in empowering our customers with the best solutions tailored to their needs.</div>
+        <div class="box text-center">Your feedback and inquiries are important to us!</div>
     </div>
 
     <div class="row">
@@ -42,7 +48,7 @@
 
 <style>
     .abouts-us-container {
-        max-width: 2000px;
+        width: 100%;
         margin: 40px auto;
         background-color: #ffffff;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -61,12 +67,25 @@
         }
 
     .header {
-        background-image: url('https://source.unsplash.com/1600x400/?coffee,cafe');
         color: #fff;
         padding: 40px 0;
         text-align: center;
+        margin: 0;
         background-size: cover;
         background-position: center;
+    }
+
+    .header h1 {
+            background-color: #4086f7;
+            height: 350px;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+            justify-content: center;
+            color: #fff;
+            display: flex;
+            font-weight: 800;
+            font-size: 3rem
     }
 
     .contact-info, .map-section, .social-media {
@@ -110,15 +129,30 @@
             background-color: #f0f8ff;
             border: 1px solid #ccc;
             border-radius: 5px;
-            width: 45%;
+            width: 50%;
             text-align: center;
             font-size: 1.5em;
-            height:400px;
+            height:500px;
             line-height: 1.8;
+            vertical-align:middle;
             margin: 40px;
-            padding:10px
-            justify-content:center;
+            padding:10px;
+            justify-content: center;
+            align-items: center;
             color: #333;
+        }
+
+
+    .image-container {
+        text-align: center;
+        margin-top: 0; 
+    }
+
+        .image-container img {
+            max-width: 100%; /* Make the image responsive */
+            height: auto; /* Maintain aspect ratio */
+            width: 4000px; /* Set a specific width (adjust as needed) */
+            margin: 0;
         }
 </style>
 
