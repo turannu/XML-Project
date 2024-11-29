@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using XML_Project.Model;
+
 
 namespace XML_Project.Data
 {
@@ -14,6 +14,6 @@ namespace XML_Project.Data
         {
         }
 
-        public DbSet<XML_Project.Model.Review> Review { get; set; } = default!;
+        
     }
 }
