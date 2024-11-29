@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Pages\**" />
+    <Content Remove="Pages\Pages\**" />
+    <EmbeddedResource Remove="Pages\Pages\**" />
+    <None Remove="Pages\Pages\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="brewery-schema.json" />
   </ItemGroup>
 
@@ -19,12 +26,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Newtonsoft.Json.Schema" Version="4.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pages\Pages\" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.1.0" />
   </ItemGroup>
 
 </Project>

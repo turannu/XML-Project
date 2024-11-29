@@ -1,12 +1,17 @@
 {
-  "profiles": {
-    "XML Project": {
-      "commandName": "Project",
-      "launchBrowser": true
-    },
-    "WSL": {
-      "commandName": "WSL2",
-      "distributionName": ""
+    "profiles": {
+        "XML Project": {
+            "commandName": "Project",
+            "launchBrowser": true,
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "ASPNETCORE_URLS": "https://localhost:5001;http://localhost:5000"
+            },
+            "dotnetRunMessages": true
+        },
+        "WSL": {
+            "commandName": "WSL2",
+            "distributionName": ""
+        }
     }
-  }
 }

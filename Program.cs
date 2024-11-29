@@ -1,32 +1,48 @@
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.OpenApi.Models;
+using XML_Project.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add services to the container
 builder.Services.AddRazorPages();
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllers();
 
-//builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+// Swagger Configuration
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Brewery API",
+        Version = "v1",
+        Description = "Details of breweries"
+    });
+});
+
+// Database Context
+builder.Services.AddDbContext<XML_ProjectContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("XML_ProjectContext")));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+// Swagger Middleware
+if (app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Brewery API V1");
+        c.RoutePrefix = "swagger"; // Ensures swagger is accessible at /swagger
+    });
 }
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
 
+app.MapControllers();
 app.MapRazorPages();
-
 
 app.Run();
