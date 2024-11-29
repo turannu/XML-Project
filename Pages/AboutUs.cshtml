@@ -10,7 +10,7 @@
     </div>
 
     <div class="text-center image-container">
-        <img src="/images/brewery_photo.jpg" alt="Placeholder Image" class="img-fluid" style="width: 100%;">
+        <img src="/images/brewery_photo.jpg" alt="About us page banner image" class="img-fluid" style="width: 100%;">
     </div>
 
 
@@ -76,7 +76,7 @@
     }
 
     .header h1 {
-            background-color: #4086f7;
+            background-color: #164FAC;
             height: 350px;
             align-items: center;
             padding: 20px;
@@ -120,7 +120,10 @@
     .side-by-side {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: stretch;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
             margin-top: 20px;
         }
 
@@ -131,12 +134,16 @@
             border-radius: 5px;
             width: 50%;
             text-align: center;
+            display: flex;
+            align-items: center;
             font-size: 1.5em;
-            height:500px;
+            flex: 1;
+            flex-wrap: wrap;
+            min-width: 200px;
+            box-sizing: border-box;
             line-height: 1.8;
             vertical-align:middle;
-            margin: 40px;
-            padding:10px;
+            padding:20px;
             justify-content: center;
             align-items: center;
             color: #333;

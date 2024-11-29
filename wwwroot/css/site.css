@@ -1,10 +1,11 @@
 html {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 @media (min-width: 768px) {
   html {
-    font-size: 20px;
+    font-size: 25px;
+    width: 100%;
   }
 }
 
@@ -19,6 +20,7 @@ html {
 
 /* General Reset */
 body {
+    height: 100%;
     margin-bottom: 60px;
     font-family: Arial, sans-serif;
 }
@@ -43,8 +45,8 @@ body {
         }
 
 .navbar-brand {
-    background-color: #4086f7;
-    color: #fff; 
+    background-color: #164FAC;
+    color: #fff;
     border-radius: 10px;
     padding: 10px; /* Space inside the element */
     display: inline-block; /* Ensures the element adapts to its content */
@@ -73,12 +75,10 @@ body {
 /* Table Styling */
 .table-container {
     padding: 20px;
-    min-width: 900px;
     margin: 0 auto;
 }
 
 table {
-    width: 100%;
     border-collapse: collapse;
 }
 
@@ -130,3 +130,8 @@ tr:hover {
     .inline-list li {
         display: inline;
     }
+
+.btn {
+    background-color: #164FAC;
+    font-size: 26px;
+}
