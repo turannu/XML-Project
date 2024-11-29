@@ -33,7 +33,6 @@ body {
 }
 
     .navbar a {
-        color: white;
         text-decoration: none;
         margin: 0 15px;
         font-weight: bold;
@@ -42,6 +41,16 @@ body {
         .navbar a:hover {
             text-decoration: underline;
         }
+
+.navbar-brand {
+    background-color: #4086f7;
+    color: #fff; 
+    border-radius: 10px;
+    padding: 10px; /* Space inside the element */
+    display: inline-block; /* Ensures the element adapts to its content */
+    font-family: Arial, sans-serif; /* Optional: Font style */
+    font-size: 35px; /* Optional: Text size */
+}
 
 /* Header Styling */
 .header {
