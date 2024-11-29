@@ -109,6 +109,9 @@
         <label for="breweryName">Brewery Name</label>
         <input type="text" name="NewReview.BreweryName" placeholder="Enter brewery name" required />
 
+        <label for="resturantName">Resturant Name</label>
+        <input type="text" name="NewReview.ResturantName" placeholder="Enter resturant name" />
+
         <label for="reviewText">Your Review</label>
         <textarea name="NewReview.ReviewText" placeholder="Share your experience..." required></textarea>
 
@@ -136,6 +139,7 @@
                 <p class="brewery-name"><strong>Brewery:</strong> @review.BreweryName</p>
                 <p><strong>Rating:</strong> @review.Rating</p>
                 <p>@review.ReviewText</p>
+                <p>@review.ResturantName</p>
             </li>
         }
     </ul>
@@ -145,4 +149,3 @@ else
     <p>No reviews yet. Be the first to leave a review!</p>
 }
 
- 
