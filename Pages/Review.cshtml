@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Write a Review";
 }
+
 <style>
     /* General form styling */
     #reviewForm {
@@ -14,7 +15,6 @@
         border-radius: 8px;
         background-color: #f9f9f9;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        font-family: Arial, sans-serif;
     }
 
         #reviewForm input,
@@ -27,7 +27,7 @@
             padding: 10px;
             border-radius: 4px;
             border: 1px solid #ccc;
-            font-size: 14px;
+            font-size: 20px;
         }
 
         #reviewForm textarea {
@@ -36,12 +36,12 @@
         }
 
         #reviewForm button {
-            background-color: #007bff;
             color: white;
             border: none;
             cursor: pointer;
             transition: background-color 0.3s ease;
             font-weight: bold;
+            font-size: 25px;
         }
 
             #reviewForm button:hover {
@@ -50,23 +50,23 @@
 
         #reviewForm label {
             font-weight: bold;
-            font-size: 14px;
+            font-size: 20px;
             margin-top: 10px;
             display: inline-block;
         }
 
     /* Styling for the review display */
-    h2 {
+    .review-container h2 {
         text-align: center;
         color: #333;
     }
 
-    ul {
+    .review-container ul {
         list-style-type: none;
         padding: 0;
     }
 
-        ul li {
+    .review-container ul li {
             margin-bottom: 15px;
             padding: 10px;
             border: 1px solid #ddd;
@@ -75,30 +75,32 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-            ul li p {
+    .review-container ul li p {
                 margin: 5px 0;
             }
 
-                ul li p strong {
+    .review-container ul li p strong {
                     color: #007bff;
                 }
 
     /* Highlight reviewer name and brewery name */
     .reviewer-name {
-        font-size: 16px;
+        font-size: 25px;
         font-weight: bold;
         color: #0056b3;
     }
 
     .brewery-name {
-        font-size: 14px;
+        font-size: 20px;
         font-style: italic;
         color: #555;
     }
 </style>
 
 
- 
+
+<div class="review-container">
+
 <form method="post">
     <div id="reviewForm">
         <h2 style="text-align: center; color: #333;">Write a Review</h2>
@@ -124,7 +126,7 @@
             <option value="5">5 - Excellent</option>
         </select>
 
-        <button type="submit" asp-page-handler="SubmitReview">Submit Review</button>
+        <button class="btn" type="submit" asp-page-handler="SubmitReview">Submit Review</button>
     </div>
 </form>
 
@@ -148,4 +150,4 @@ else
 {
     <p>No reviews yet. Be the first to leave a review!</p>
 }
-
+</div>

@@ -1,10 +1,11 @@
 html {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 @media (min-width: 768px) {
   html {
-    font-size: 20px;
+    font-size: 25px;
+    width: 100%;
   }
 }
 
@@ -19,6 +20,7 @@ html {
 
 /* General Reset */
 body {
+    height: 100%;
     margin-bottom: 60px;
     font-family: Arial, sans-serif;
 }
@@ -33,7 +35,6 @@ body {
 }
 
     .navbar a {
-        color: white;
         text-decoration: none;
         margin: 0 15px;
         font-weight: bold;
@@ -42,6 +43,16 @@ body {
         .navbar a:hover {
             text-decoration: underline;
         }
+
+.navbar-brand {
+    background-color: #164FAC;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px; /* Space inside the element */
+    display: inline-block; /* Ensures the element adapts to its content */
+    font-family: Arial, sans-serif; /* Optional: Font style */
+    font-size: 35px; /* Optional: Text size */
+}
 
 /* Header Styling */
 .header {
@@ -64,12 +75,10 @@ body {
 /* Table Styling */
 .table-container {
     padding: 20px;
-    min-width: 900px;
     margin: 0 auto;
 }
 
 table {
-    width: 100%;
     border-collapse: collapse;
 }
 
@@ -108,6 +117,10 @@ tr:hover {
     color: white;
 }
 
+    .footer a {
+        color: #4C8FFF;
+    } 
+
 /* Inline List Styling */
 .inline-list {
     list-style: none;
@@ -121,3 +134,8 @@ tr:hover {
     .inline-list li {
         display: inline;
     }
+
+.btn {
+    background-color: #164FAC;
+    font-size: 26px;
+}
