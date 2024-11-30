@@ -1,0 +1,12 @@
+﻿body {
+}
+.navbar {
+    background-color: #7be0d8 !important;
+}
+.navbar-brand img {
+    max-width: 100px;
+    height: auto;
+}
+.navbar-toggler-icon {
+    color: #ecf0f1;
+}

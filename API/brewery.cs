@@ -6,6 +6,8 @@
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
     using SipsBites;
+    using dotenv.net;
+
 
     public partial class Brewery
     {
@@ -50,13 +52,16 @@
         public string Phone { get; set; }
 
         [JsonProperty("website_url")]
-        public Uri WebsiteUrl { get; set; }
+        public string WebsiteUrl { get; set; }
 
         [JsonProperty("state")]
         public string State { get; set; }
 
         [JsonProperty("street")]
         public string Street { get; set; }
+
+        // New property for the Google Maps link
+        public string MapUrl { get; set; }
     }
 
     public partial class Brewery

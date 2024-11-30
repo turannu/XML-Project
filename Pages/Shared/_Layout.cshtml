@@ -6,13 +6,17 @@
     <title>@ViewData["Title"] - XML_Project</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Index.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Layout.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/XML_Project.styles.css" asp-append-version="true" />
 </head>
 <body class="full-screen d-flex flex-column">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand text-white" asp-area="" asp-page="/Index">Sips & Bites</a>
+                <a class="navbar-brand img" asp-area="" asp-page="/Index">
+                    <img src="/image/finallogo.png" alt="A vibrant logo for a restaurant and brewery called 'Sips 'n Bites'. The logo features a large red shield shape with white text that reads 'Sips 'n Bites Restaurants & Breweries USA'. Inside the shield are several icons including a foaming beer mug, a fork and knife, and a stylized location marker. The logo has a fun, whimsical style that effectively communicates the dining and drinking establishment theme" />
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -25,6 +29,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Review">Review</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-page="/Brewery">Brewery</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-page="/Restaurant">Restaurant</a>

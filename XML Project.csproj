@@ -8,9 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\**" />
     <Compile Remove="Pages\Pages\**" />
+    <Content Remove="Migrations\**" />
     <Content Remove="Pages\Pages\**" />
+    <EmbeddedResource Remove="Migrations\**" />
     <EmbeddedResource Remove="Pages\Pages\**" />
+    <None Remove="Migrations\**" />
     <None Remove="Pages\Pages\**" />
   </ItemGroup>
 
@@ -19,6 +23,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\googlemap.env" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dotenv.net" Version="3.2.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0" />
 	<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0" />
@@ -30,10 +39,6 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Newtonsoft.Json.Schema" Version="4.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="7.1.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,5 @@
 ﻿@page
-@model XML_Project.Pages.restaurantModel
+@model XML_Project.Pages.RestaurantModel
 @{
     ViewData["Title"] = "Restaurant Search";
 }
@@ -16,11 +16,10 @@
             <tr>
                 <th class="bg-dark text-white">Name</th>
                 <th class="bg-dark text-white">Address</th>
-                <th class="bg-dark text-white">City</t>
+                <th class="bg-dark text-white">City</th>
                 <th class="bg-dark text-white">State/Province</th>
                 <th class="bg-dark text-white">Country</th>
-                
-                
+                <th class="bg-dark text-white">View on Google Maps</th>
             </tr>
         </thead>
         <tbody>
@@ -34,13 +33,14 @@
                         <td>@restaurant.City</td>
                         <td>@restaurant.Province</td>
                         <td>@restaurant.Country</td>
+                        <td><a href="@restaurant.MapUrl" target="_blank">View on Google Maps</a></td> <!-- Link to Google Maps -->
                     </tr>
                 }
             }
             else
             {
                 <tr>
-                    <td colspan="9">No restaurants available to display.</td>
+                    <td colspan="6">No restaurants available to display.</td>
                 </tr>
             }
         </tbody>

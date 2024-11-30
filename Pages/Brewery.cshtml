@@ -1,0 +1,31 @@
+﻿@page
+@model XML_Project.Pages.BreweryModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brewery List</title>
+</head>
+<body>
+    <h1>Brewery List - @Model.Brand</h1>
+
+    <ul>
+        @foreach (var brewery in Model.Breweries)
+        {
+            <li>
+                <strong>@brewery.Name</strong><br />
+                Address: @brewery.Address1, @brewery.City, @brewery.State @brewery.PostalCode<br />
+                Phone: @brewery.Phone<br />
+                Website: <a href="@brewery.WebsiteUrl" target="_blank">Visit Website</a><br />
+                @if (!string.IsNullOrEmpty(brewery.MapUrl))
+                {
+                    <a href="@brewery.MapUrl" target="_blank">View on Google Maps</a>
+                }
+            </li>
+        }
+    </ul>
+</body>
+</html>

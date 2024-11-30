@@ -34,6 +34,8 @@ namespace Restaurant
 
         [JsonProperty("province")]
         public string Province { get; set; }
+        // New property for the Google Maps link
+        public string MapUrl { get; set; }
     }
 
     public partial class RestaurantUsa
