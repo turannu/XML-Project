@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/Index.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/Layout.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/XML_Project.styles.css" asp-append-version="true" />
 </head>
 <body class="full-screen d-flex flex-column">
@@ -23,16 +22,10 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                       
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/AboutUs">AboutUs</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Brewery">Brewery</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Review">Review</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-page="/Brewery">Brewery</a>
-                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-page="/Restaurant">Restaurant</a>
                         </li>
@@ -40,6 +33,23 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="https://localhost:5001/search">Search</a>
 
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="https://localhost:5001/crime">Crime</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/AboutUs">AboutUs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Review">Review</a>
+                        </li>
+                        <li class="nav-item ml-auto">
+                            <strong>
+                                <a href="tel:+123456789" class="nav-link">
+                                    <span class="phone-icon">&#x260E;</span> Call Us: +123 456 789
+                                </a>
+                            </strong>
                         </li>
                     </ul>
                 </div>
@@ -52,15 +62,44 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer style="background-color: #7be0d8;">
         <div class="container">
-            <span class="text-white">&copy; 2024 - XML_Project - </span> <a asp-area="" asp-page="/Privacy">Privacy Policy</a>
+            <div class="row">
+                <div class="col-md-3">
+                   <h5>Info</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://localhost:5001/AboutUs" class="text-muted">About Us</a></li>
+                        <li><a href="https://localhost:5001/Review" class="text-muted">Review</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>SERVICES</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://localhost:5001/Restaurant" class="text-muted">Restaurant Search</a></li>
+                        <li><a href="https://localhost:5001/Brewery" class="text-muted">Brewery Search</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Privacy</h5>
+                    <ul class="list-unstyled">
+                        
+                        <li><a href="https://localhost:5001/Privacy" class="text-muted">Laws & Regulations</a></li>
+                    </ul>
+                </div>
+               
+            </div>
         </div>
     </footer>
+
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

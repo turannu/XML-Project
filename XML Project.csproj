@@ -10,12 +10,20 @@
   <ItemGroup>
     <Compile Remove="Migrations\**" />
     <Compile Remove="Pages\Pages\**" />
+    <Compile Remove="wwwroot\Image\picnic-philly-photo-by-mprince-for-picnic-2200x1237px.jpg\**" />
+    <Compile Remove="wwwroot\Image\restaurant2.jpg\**" />
     <Content Remove="Migrations\**" />
     <Content Remove="Pages\Pages\**" />
+    <Content Remove="wwwroot\Image\picnic-philly-photo-by-mprince-for-picnic-2200x1237px.jpg\**" />
+    <Content Remove="wwwroot\Image\restaurant2.jpg\**" />
     <EmbeddedResource Remove="Migrations\**" />
     <EmbeddedResource Remove="Pages\Pages\**" />
+    <EmbeddedResource Remove="wwwroot\Image\picnic-philly-photo-by-mprince-for-picnic-2200x1237px.jpg\**" />
+    <EmbeddedResource Remove="wwwroot\Image\restaurant2.jpg\**" />
     <None Remove="Migrations\**" />
     <None Remove="Pages\Pages\**" />
+    <None Remove="wwwroot\Image\picnic-philly-photo-by-mprince-for-picnic-2200x1237px.jpg\**" />
+    <None Remove="wwwroot\Image\restaurant2.jpg\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,7 +31,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\googlemap.env" />
+    <None Include="wwwroot\images\img\cheers 2.webp" />
+    <None Include="wwwroot\Image\beacon_restaurants-2.jpg" />
   </ItemGroup>
 
   <ItemGroup>

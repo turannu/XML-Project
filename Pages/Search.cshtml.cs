@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using SipsBites;
+using System;
 
 namespace XML_Project.Pages
 {
@@ -53,32 +54,29 @@ namespace XML_Project.Pages
         }
 
         private void PopulateAvailableCities()
-{    //By help of AI
-    // If a state is selected, show cities only for that state
-    if (!string.IsNullOrEmpty(State))
-    {
-        // Combine cities from breweries and restaurants for the selected state
-        AvailableCities = SearchResults
-            .Where(b => GetStateNameByAbbreviation(b.State) == State)
-            .Select(b => b.City)
-            .Concat(Restaurants
-                .Where(r => GetStateNameByAbbreviation(r.Province) == State)
-                .Select(r => r.City))
-            .Distinct()
-            .OrderBy(c => c)
-            .ToList();
-    }
-    else
-    {
-        // If no state selected, show all unique cities from both sources
-        AvailableCities = SearchResults
-            .Select(b => b.City)
-            .Concat(Restaurants.Select(r => r.City))
-            .Distinct()
-            .OrderBy(c => c)
-            .ToList();
-    }
-}
+        {
+            if (!string.IsNullOrEmpty(State))
+            {
+                AvailableCities = SearchResults
+                    .Where(b => GetStateNameByAbbreviation(b.State).Equals(State, StringComparison.OrdinalIgnoreCase))
+                    .Select(b => b.City)
+                    .Concat(Restaurants
+                        .Where(r => GetStateNameByAbbreviation(r.Province).Equals(State, StringComparison.OrdinalIgnoreCase))
+                        .Select(r => r.City))
+                    .Distinct()
+                    .OrderBy(c => c)
+                    .ToList();
+            }
+            else
+            {
+                AvailableCities = SearchResults
+                    .Select(b => b.City)
+                    .Concat(Restaurants.Select(r => r.City))
+                    .Distinct()
+                    .OrderBy(c => c)
+                    .ToList();
+            }
+        }
 
         private async Task LoadDataAsync()
         {
@@ -88,37 +86,48 @@ namespace XML_Project.Pages
                 LoadUSStatesAsync()
             );
 
-            // Apply filters after loading
             ApplyFilters();
         }
 
         private void ApplyFilters()
         {
-            // Filter Breweries
+            _logger.LogInformation($"Starting Filters - State: {State}, City: {City}, BreweryType: {BreweryType}, SearchTerm: {SearchTerm}");
+            _logger.LogInformation($"Total Breweries before filtering: {SearchResults.Count}");
+
             var breweryQuery = SearchResults.AsEnumerable();
 
-            // State filter
+            // State Filter
             if (!string.IsNullOrEmpty(State))
             {
                 breweryQuery = breweryQuery.Where(b =>
-                    GetStateNameByAbbreviation(b.State) == State);
+                {
+                    bool isMatch = b.State.Equals(State, StringComparison.OrdinalIgnoreCase) ||
+                                   GetStateNameByAbbreviation(b.State).Equals(State, StringComparison.OrdinalIgnoreCase);
+
+                    if (!isMatch)
+                    {
+                        _logger.LogDebug($"Brewery {b.Name} state mismatch. Brewery State: {b.State}, Converted: {GetStateNameByAbbreviation(b.State)}, Filter State: {State}");
+                    }
+
+                    return isMatch;
+                });
             }
 
-            // City filter
+            // City Filter
             if (!string.IsNullOrEmpty(City))
             {
                 breweryQuery = breweryQuery.Where(b =>
                     b.City.Equals(City, StringComparison.OrdinalIgnoreCase));
             }
 
-            // Brewery Type filter
+            // Brewery Type Filter
             if (!string.IsNullOrEmpty(BreweryType))
             {
                 breweryQuery = breweryQuery.Where(b =>
                     b.BreweryType.Equals(BreweryType, StringComparison.OrdinalIgnoreCase));
             }
 
-            // Search Term filter
+            // Search Term Filter
             if (!string.IsNullOrEmpty(SearchTerm))
             {
                 breweryQuery = breweryQuery.Where(b =>
@@ -128,24 +137,23 @@ namespace XML_Project.Pages
 
             SearchResults = breweryQuery.ToList();
 
-            // Filter Restaurants
+            _logger.LogInformation($"Breweries after filtering: {SearchResults.Count}");
+
+            // Restaurant filtering remains the same
             var restaurantQuery = Restaurants.AsEnumerable();
 
-            // State filter
             if (!string.IsNullOrEmpty(State))
             {
                 restaurantQuery = restaurantQuery.Where(r =>
-                    GetStateNameByAbbreviation(r.Province) == State);
+                    GetStateNameByAbbreviation(r.Province).Equals(State, StringComparison.OrdinalIgnoreCase));
             }
 
-            // City filter
             if (!string.IsNullOrEmpty(City))
             {
                 restaurantQuery = restaurantQuery.Where(r =>
                     r.City.Equals(City, StringComparison.OrdinalIgnoreCase));
             }
 
-            // Search Term filter
             if (!string.IsNullOrEmpty(SearchTerm))
             {
                 restaurantQuery = restaurantQuery.Where(r =>
@@ -158,28 +166,38 @@ namespace XML_Project.Pages
         private async Task LoadBreweriesAsync()
         {
             var client = _clientFactory.CreateClient();
+            var allBreweries = new List<Brewery>();
+
             try
             {
-                string breweryApiUrl = "https://api.openbrewerydb.org/v1/breweries";
-                var response = await client.GetAsync(breweryApiUrl);
-
-                if (response.IsSuccessStatusCode)
+                for (int page = 1; page <= 5; page++)
                 {
-                    var jsonString = await response.Content.ReadAsStringAsync();
-                    var breweries = JsonConvert.DeserializeObject<List<Brewery>>(jsonString) ?? new List<Brewery>();
+                    string breweryApiUrl = $"https://api.openbrewerydb.org/v1/breweries?per_page=200&page={page}";
+                    var response = await client.GetAsync(breweryApiUrl);
 
-                    // Enrich brewery data with state names
-                    foreach (var brewery in breweries)
+                    if (response.IsSuccessStatusCode)
                     {
-                        brewery.State = GetStateNameByAbbreviation(brewery.State);
-                    }
+                        var jsonString = await response.Content.ReadAsStringAsync();
+                        var pageBreweries = JsonConvert.DeserializeObject<List<Brewery>>(jsonString) ?? new List<Brewery>();
 
-                    SearchResults = breweries;
+                        if (pageBreweries.Count == 0) break;
+
+                        foreach (var brewery in pageBreweries)
+                        {
+                            brewery.State = GetStateNameByAbbreviation(brewery.State);
+                        }
+
+                        allBreweries.AddRange(pageBreweries);
+                    }
+                    else
+                    {
+                        _logger.LogWarning($"Failed to load breweries on page {page}. Status code: {response.StatusCode}");
+                        break;
+                    }
                 }
-                else
-                {
-                    _logger.LogWarning($"Failed to load breweries. Status code: {response.StatusCode}");
-                }
+
+                SearchResults = allBreweries;
+                _logger.LogInformation($"Total breweries loaded: {SearchResults.Count}");
             }
             catch (Exception ex)
             {
@@ -200,6 +218,7 @@ namespace XML_Project.Pages
                 {
                     var jsonString = await response.Content.ReadAsStringAsync();
                     Restaurants = JsonConvert.DeserializeObject<List<Restaurant.RestaurantUsa>>(jsonString) ?? new List<Restaurant.RestaurantUsa>();
+                    _logger.LogInformation($"Total restaurants loaded: {Restaurants.Count}");
                 }
                 else
                 {
@@ -225,6 +244,7 @@ namespace XML_Project.Pages
                 {
                     var jsonString = await response.Content.ReadAsStringAsync();
                     USStates = JsonConvert.DeserializeObject<List<USAState.UsState>>(jsonString) ?? new List<USAState.UsState>();
+                    _logger.LogInformation($"Total states loaded: {USStates.Count}");
                 }
                 else
                 {

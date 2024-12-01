@@ -1,7 +1,5 @@
-using Azure.Core;
-using dotenv.net;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Newtonsoft.Json.Linq;
 using SipsBites;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -12,61 +10,67 @@ namespace XML_Project.Pages
     public class BreweryModel : PageModel
     {
         static readonly HttpClient client = new HttpClient();
-        private readonly ILogger<BreweryModel> _logger;
+        private readonly ILogger<SearchModel> _logger;
 
-        public List<Brewery> Breweries { get; set; }
-        public string Brand { get; set; }
-        public string GoogleMapsApiKey { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string State { get; set; }
 
-        public BreweryModel(ILogger<BreweryModel> logger)
+        [BindProperty(SupportsGet = true)]
+        public string BreweryType { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string City { get; set; }
+
+        public List<Brewery> SearchResults { get; set; } = new List<Brewery>();
+
+        public BreweryModel(ILogger<SearchModel> logger)
         {
             _logger = logger;
-            Breweries = new List<Brewery>();
         }
 
         public async Task OnGetAsync()
         {
-            // Load the API key from the .env file
-            DotEnv.AutoConfig();  // Load the .env file to get API key
-            GoogleMapsApiKey = Environment.GetEnvironmentVariable("GOOGLE_MAPS_API_KEY");
-
-            string brand = "Sips and Bites Navigator";
-            string inBrand = Request.Query["Brand"];
-
-            if (!string.IsNullOrEmpty(inBrand))
+            // Only perform search if any field is provided
+            if (!string.IsNullOrEmpty(State) || !string.IsNullOrEmpty(BreweryType) || !string.IsNullOrEmpty(City))
             {
-                brand = inBrand;
-            }
+                string baseUrl = "https://api.openbrewerydb.org/breweries?";
+                var queryParams = new List<string>();
 
-            Brand = brand;
-            Breweries = await GetBreweryDataAsync();
-        }
-
-        private async Task<List<Brewery>> GetBreweryDataAsync()
-        {
-            // Get brewery data from API
-            HttpResponseMessage result = await client.GetAsync("https://api.openbrewerydb.org/breweries");
-            List<Brewery> breweries = new List<Brewery>();
-
-            if (result.IsSuccessStatusCode)
-            {
-                string breweryJson = await result.Content.ReadAsStringAsync();
-                JArray jsonarray = JArray.Parse(breweryJson);
-                breweries = jsonarray.ToObject<List<Brewery>>();
-
-                // Loop through each brewery and add the Google Maps URL
-                foreach (var brewery in breweries)
+                if (!string.IsNullOrEmpty(State))
                 {
-                    // Construct Google Maps URL using latitude and longitude (if available)
-                    if (!string.IsNullOrEmpty(brewery.Latitude) && !string.IsNullOrEmpty(brewery.Longitude))
+                    queryParams.Add($"by_state={Uri.EscapeDataString(State)}");
+                }
+
+                if (!string.IsNullOrEmpty(City))
+                {
+                    queryParams.Add($"by_city={Uri.EscapeDataString(City)}");
+                }
+
+                if (!string.IsNullOrEmpty(BreweryType))
+                {
+                    queryParams.Add($"by_type={Uri.EscapeDataString(BreweryType)}");
+                }
+
+                string apiUrl = baseUrl + string.Join("&", queryParams);
+
+                try
+                {
+                    var response = await client.GetAsync(apiUrl);
+                    if (response.IsSuccessStatusCode)
                     {
-                        string mapUrl = $"https://www.google.com/maps?q={brewery.Latitude},{brewery.Longitude}&key={GoogleMapsApiKey}";
-                        brewery.MapUrl = mapUrl;
+                        string jsonString = await response.Content.ReadAsStringAsync();
+                        SearchResults = Brewery.FromJson(jsonString);
+                    }
+                    else
+                    {
+                        _logger.LogError($"API request failed with status code: {response.StatusCode}");
                     }
                 }
+                catch (Exception ex)
+                {
+                    _logger.LogError($"Error fetching brewery data: {ex.Message}");
+                }
             }
-
-            return breweries;
         }
     }
 }

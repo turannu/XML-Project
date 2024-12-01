@@ -6,7 +6,7 @@
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
     using SipsBites;
-    using dotenv.net;
+    
 
 
     public partial class Brewery
@@ -67,6 +67,8 @@
     public partial class Brewery
     {
         public static List<Brewery> FromJson(string json) => JsonConvert.DeserializeObject<List<Brewery>>(json, SipsBites.Converter.Settings);
+        // Combined full address for Google Maps
+        public string FullAddress => $"{Address1} {City} {State} {PostalCode}".Trim();
     }
 
     public static class Serialize

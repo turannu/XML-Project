@@ -1,48 +1,92 @@
 ﻿@page
 @model XML_Project.Pages.RestaurantModel
+
 @{
     ViewData["Title"] = "Restaurant Search";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Restaurant Search</h1>
-    <ul class="inline-list">
-        <li>Find restaurants</li>
-        <li>View restaurant details</li>
-        <li>Explore locations</li>
-    </ul>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th class="bg-dark text-white">Name</th>
-                <th class="bg-dark text-white">Address</th>
-                <th class="bg-dark text-white">City</th>
-                <th class="bg-dark text-white">State/Province</th>
-                <th class="bg-dark text-white">Country</th>
-                <th class="bg-dark text-white">View on Google Maps</th>
-            </tr>
-        </thead>
-        <tbody>
-            @if (Model.Restaurants != null && Model.Restaurants.Any())
-            {
-                @foreach (var restaurant in Model.Restaurants)
-                {
-                    <tr>
-                        <td>@restaurant.Name</td>
-                        <td>@restaurant.Address</td>
-                        <td>@restaurant.City</td>
-                        <td>@restaurant.Province</td>
-                        <td>@restaurant.Country</td>
-                        <td><a href="@restaurant.MapUrl" target="_blank">View on Google Maps</a></td> <!-- Link to Google Maps -->
-                    </tr>
-                }
-            }
-            else
-            {
-                <tr>
-                    <td colspan="6">No restaurants available to display.</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+<div class="container">
+    <h1>Restaurant Search</h1>
+
+    <form method="get" class="mb-4" id="searchForm">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label for="State">Filter by State:</label>
+                    <select asp-for="State" id="stateSelect" class="form-control">
+                        <option value="">All States</option>
+                        @foreach (var state in Model.AvailableStates)
+                        {
+                            <option value="@state">@state</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label for="City">Filter by City:</label>
+                    <select asp-for="City" id="citySelect" class="form-control">
+                        <option value="">All Cities</option>
+                        @foreach (var city in Model.AvailableCities)
+                        {
+                            <option value="@city">@city</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2 align-self-end">
+                <button type="submit" class="btn btn-primary">Search</button>
+                
+            </div>
+        </div>
+    </form>
+
+    <div class="row">
+        <div class="col-12">
+            <h2>Results: @Model.SearchResults.Count restaurants found</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        @foreach (var restaurant in Model.SearchResults)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@restaurant.Name</h5>
+                        <p class="card-text">
+                            <strong>ID:</strong> @restaurant.Id <br />
+                            <strong>Address:</strong> @restaurant.Address <br />
+                            <strong>City:</strong> @restaurant.City <br />
+                            <strong>State:</strong> @restaurant.Province <br />
+                            <strong>Country:</strong> @restaurant.Country
+                        </p>
+                        <a href="@restaurant.MapUrl" target="_blank" class="btn btn-info">View on Map</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 </div>
+--ai help
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#stateSelect').on('change', function () {
+                var selectedState = $(this).val();
+                var $citySelect = $('#citySelect');
+
+                // Reset city dropdown
+                $citySelect.empty();
+                $citySelect.append('<option value="">All Cities</option>');
+
+                // If a state is selected, fetch cities for that state
+                if (selectedState) {
+                    // You would typically make an AJAX call here to get cities
+                    // For now, we'll use a server-side postback
+                    $('#searchForm').submit();
+                }
+            });
+        });
+    </script>
+}

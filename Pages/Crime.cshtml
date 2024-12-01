@@ -1,0 +1,40 @@
+﻿@page
+@model XML_Project.Pages.CrimeDataModel
+@{
+    ViewData["Title"] = "Crime Data";
+}
+
+<h2>Crime Data</h2>
+<h3>Crimes by Offense</h3>
+<div class="row">
+    @foreach (var crimeByOffense in Model.CrimeDataByOffense)
+    {
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@crimeByOffense.Offense</h5>
+                    <p class="card-text">@crimeByOffense.Count crimes</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<h2>Crimes by Zip Code</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Zip Code</th>
+            <th>Crime Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var crimeByZip in Model.CrimeDataByZip)
+        {
+            <tr>
+                <td>@crimeByZip.Zip</td>
+                <td>@crimeByZip.Count</td>
+            </tr>
+        }
+    </tbody>
+</table>

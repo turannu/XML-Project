@@ -1,142 +1,80 @@
 html {
-  font-size: 25px;
+    font-size: 25px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 25px;
-    width: 100%;
-  }
+    html {
+        font-size: 25px;
+    }
 }
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
-/* General Reset */
+.container {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+.centered {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    
+}
+
 body {
-    height: 100%;
     margin-bottom: 60px;
-    font-family: Arial, sans-serif;
+    margin-top: 0px; /* Remove default margin if any */
+
+}
+body {
+    background-color: #f8f9fa;
 }
 
-/* Navigation Bar Styling */
 .navbar {
-    display: flex;
-    background-color: #333;
-    padding: 10px 20px;
-    justify-content: space-between;
-    align-items: center;
+    background-color: #7be0d8 !important;
+    padding: 10px 10px;
 }
 
-    .navbar a {
-        text-decoration: none;
-        margin: 0 15px;
-        font-weight: bold;
+.navbar-brand img {
+    max-width: 100px;
+    height: auto;
+}
+
+.navbar-nav .nav-link {
+    color: #ecf0f1;
+}
+
+    .navbar-nav .nav-link:hover {
+        color: #ffffff;
+        display: flex;
     }
 
-        .navbar a:hover {
-            text-decoration: underline;
-        }
-
-.navbar-brand {
-    background-color: #164FAC;
-    color: #fff;
-    border-radius: 10px;
-    padding: 10px; /* Space inside the element */
-    display: inline-block; /* Ensures the element adapts to its content */
-    font-family: Arial, sans-serif; /* Optional: Font style */
-    font-size: 35px; /* Optional: Text size */
+.navbar-toggler-icon {
+    color: #ecf0f1;
 }
 
-/* Header Styling */
-.header {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #f4f4f4;
+.phone-icon {
+    margin-right: 5px;
 }
 
-    .header h1 {
-        font-size: 2.5em;
-        margin: 0;
-        color: #333;
-    }
-
-    .header h2 {
-        font-size: 1.5em;
-        color: #666;
-    }
-
-/* Table Styling */
-.table-container {
-    padding: 20px;
-    margin: 0 auto;
+/* Footer Specific Styles */
+footer h5 {
+    font-size: 1rem; /* Adjust heading size */
 }
 
-table {
-    border-collapse: collapse;
+footer ul li a {
+    font-size: 0.9rem; /* Adjust link size */
+    color: #ffffff !important; /* Set consistent link color */
 }
 
-th, td {
-    padding: 15px;
-    text-align: left;
-    border: 1px solid #ddd;
+footer ul {
+    padding-left: 0; /* Align list items */
 }
 
-th {
-    background-color: #333;
-    color: white;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-tr:hover {
-    background-color: #f1f1f1;
-}
-.error-message {
-    color: red;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid red;
-    border-radius: 4px;
-    background-color: #fff3f3;
-}
-
-/* Footer Placeholder */
-.footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-}
-
-    .footer a {
-        color: #4C8FFF;
-    } 
-
-/* Inline List Styling */
-.inline-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 10px;
-    justify-content:center;
-}
-
-    .inline-list li {
-        display: inline;
-    }
-
-.btn {
-    background-color: #164FAC;
-    font-size: 26px;
+footer {
+    padding: 10px 0; /* Maintain footer spacing */
+   
 }

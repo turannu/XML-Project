@@ -1,0 +1,29 @@
+﻿
+.centered {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.form-inline {
+    display: inline-block;
+}
+.submit-container {
+    text-align: center;
+    margin-top: 10px;
+    
+}
+
+.carousel-inner {
+    height: 300px; /* Set a consistent height for the carousel */
+}
+
+.carousel-item img {
+    height: 100%; /* Ensure images fit the carousel height */
+    width: 100%; /* Stretch images to fit the width */
+    object-fit: cover; /* Maintain aspect ratio without distortion */
+}
+.submitbutton-small {
+    font-size: 12px; /* Reduce the font size */
+    padding: 5px 10px; /* Reduce the padding */
+    width: auto; /* Adjust the width if necessary */
+}
