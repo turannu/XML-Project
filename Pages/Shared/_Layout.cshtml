@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/Index.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Brewery.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/About.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/print.css" media="print" />
+    <link rel="stylesheet" href="~/css/mobile.css" media="print" />
     <link rel="stylesheet" href="~/XML_Project.styles.css" asp-append-version="true" />
 </head>
 <body class="full-screen d-flex flex-column">
@@ -14,7 +18,7 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand img" asp-area="" asp-page="/Index">
-                    <img src="/image/finallogo.png" alt="A vibrant logo for a restaurant and brewery called 'Sips 'n Bites'. The logo features a large red shield shape with white text that reads 'Sips 'n Bites Restaurants & Breweries USA'. Inside the shield are several icons including a foaming beer mug, a fork and knife, and a stylized location marker. The logo has a fun, whimsical style that effectively communicates the dining and drinking establishment theme" />
+                    <img src="/image/finallogo.png" alt="A vibrant logo for a restaurant and brewery called 'Sips 'n Bites'. The logo features a large red shield shape with white text that reads 'Sips 'n Bites Restaurants & Breweries USA'. Inside the shield are several icons including a foaming beer mug, a fork and knife, and a stylized location marker. The logo has a fun, whimsical style that effectively communicates the dining and drinking establishment theme." />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -25,24 +29,20 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Brewery">Brewery</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-page="/Restaurant">Restaurant</a>
                         </li>
-                        
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="https://localhost:5001/search">Search</a>
-
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="https://localhost:5001/crime">Crime</a>
-
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/AboutUs">AboutUs</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/AboutUs">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Review">Review</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/ReviewForm">Review</a>
                         </li>
                         <li class="nav-item ml-auto">
                             <strong>
@@ -66,15 +66,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                   <h5>Info</h5>
+                    <h5>Info</h5>
                     <ul class="list-unstyled">
                         <li><a href="https://localhost:5001/AboutUs" class="text-muted">About Us</a></li>
-                        <li><a href="https://localhost:5001/Review" class="text-muted">Review</a></li>
-
+                        <li><a href="https://localhost:5001/ReviewForm" class="text-muted">Review</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
-                    <h5>SERVICES</h5>
+                    <h5>Services</h5>
                     <ul class="list-unstyled">
                         <li><a href="https://localhost:5001/Restaurant" class="text-muted">Restaurant Search</a></li>
                         <li><a href="https://localhost:5001/Brewery" class="text-muted">Brewery Search</a></li>
@@ -83,21 +82,16 @@
                 <div class="col-md-3">
                     <h5>Privacy</h5>
                     <ul class="list-unstyled">
-                        
                         <li><a href="https://localhost:5001/Privacy" class="text-muted">Laws & Regulations</a></li>
                     </ul>
                 </div>
-               
             </div>
         </div>
     </footer>
 
-
-
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 

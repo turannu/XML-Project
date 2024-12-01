@@ -2,71 +2,73 @@
 @using SipsBites
 @model IndexModel
 @{
-    ViewData["Title"] = "Sips and Bites ";
+    ViewData["Title"] = "Sips and Bites";
     var brand = ViewData["Brand"];
     List<Brewery> breweries = (List<Brewery>)ViewData["Breweries"];
 }
-<div class="centered"> <h1>Welcome to @brand</h1> </div>
 
+<div class="centered">
+    <h1>Welcome to @brand</h1>
+</div>
 
-@*Automatically Carousel*@
+@* Automatically Carousel *@
 
 <div id="carouselExampleIndicators" class="carousel slide carousel-dark" data-bs-ride="carousel" data-bs-interval="4000">
     <div class="carousel-inner">
         <div class="carousel-item active">
             <div class="ratio ratio-16x9">
-                <img src="~/image/beacon_restaurants-2.jpg" class="d-block w-100" alt="image of beacon_restaurant  ">
+                <img src="~/image/beacon_restaurants-2.jpg" class="d-block w-100" alt="The image shows a cozy and inviting interior of a tropical-themed restaurant, with hanging lights, wooden decor, and lush greenery creating a warm and relaxing atmosphere." />
                 <div class="carousel-caption d-none d-md-block">
-                <p>After a long trip, relax and refuel at our welcoming local restaurant</p>
-            </div>
-            </div>
-        </div>
-
-        <div class="carousel-item">
-            <div class="ratio ratio-16x9">
-                <img src="~/images/img/bar table.jpg" class="d-block w-100" alt="image of bar table">
-                <div class="carousel-caption d-none d-md-block">
-                    <p>After a long trip, savor a cold brew at our friendly local brewery</p>
+                    <p class="img-text">After a long trip, relax and refuel at our welcoming local restaurant</p>
                 </div>
             </div>
         </div>
 
         <div class="carousel-item">
             <div class="ratio ratio-16x9">
-                <img src="~/image/restaurant2.jpg" class="d-block w-100" alt="Restaurant">
+                <img src="~/images/img/bar table.jpg" class="d-block w-100" alt="The image shows the interior of a local brewery where people are enjoying drinks after a long trip." />
                 <div class="carousel-caption d-none d-md-block">
-                    <p>Find the best breweries and restaurants in town with just a few clicks</p>
+                    <p class="img-text">After a long trip, savor a cold brew at our friendly local brewery</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="ratio ratio-16x9">
+                <img src="~/image/restaurant2.jpg" class="d-block w-100" alt="The image shows a cozy outdoor dining area with a tropical, lush setting, featuring people enjoying drinks and food at a local restaurant or brewery." />
+                <div class="carousel-caption d-none d-md-block">
+                    <p class="img-text">Find the best breweries and restaurants in town with just a few clicks</p>
                 </div>
             </div>
         </div>
     </div>
-    <button class="carousel-control-prev" data-bs-target="#carouselExampleIndicators" type="button" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
     </button>
-    <button class="carousel-control-next" data-bs-target="#carouselExampleIndicators" type="button" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </button>
 </div>
-<div class="container centered"> <h4>What you want to Search</h4> 
-    <form method="get" action="/RedirectHandler" class="form-inline"> 
+
+<div class="container centered">
+    <h4>What you want to Search</h4>
+    <form method="get" action="/RedirectHandler" class="form-inline">
         <div class="form-check form-check-inline">
             <input type="radio" class="form-check-input" id="breweryOption" name="type" value="brewery" onclick="navigateToPage(this.value)" checked="checked" />
-            <label class="form-check-label" for="breweryOption">Brewery</label> 
+            <label class="form-check-label" for="breweryOption">Brewery</label>
         </div>
         <div class="form-check form-check-inline">
-            <input type="radio" class="form-check-input" id="restaurantOption" name="type" value="restaurant" onclick="navigateToPage(this.value)" /> 
+            <input type="radio" class="form-check-input" id="restaurantOption" name="type" value="restaurant" onclick="navigateToPage(this.value)" />
             <label class="form-check-label" for="restaurantOption">Restaurant</label>
-        </div> 
+        </div>
         <div class="form-check form-check-inline">
-            <input type="radio" class="form-check-input" id="bothOption" name="type" value="both" onclick="navigateToPage(this.value)" /> 
+            <input type="radio" class="form-check-input" id="bothOption" name="type" value="both" onclick="navigateToPage(this.value)" />
             <label class="form-check-label" for="bothOption">Both</label>
-        </div> 
-        <div class="submit-container"> <button type="submit" class="submitbtn btn-primary">Submit</button> </div>
+        </div>
+        <div class="submit-container">
+            <button type="submit" class="submitbtn btn-primary">Submit</button>
+        </div>
     </form>
- </div>
-
-
-
-
+</div>

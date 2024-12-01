@@ -1,0 +1,87 @@
+﻿@page
+@model XML_Project.Pages.ReviewFormModel
+@{
+}
+<div class="container mt-5">
+    <h4>Reviews</h4>
+
+    <form method="post">
+
+        <div class="form-group">
+            <label for="FirstName">First Name</label>
+            <input type="text" class="form-control" id="FirstName" name="FirstName" required="required" />
+        </div>
+        <div class="form-group">
+            <label for="LastName">Last Name</label>
+            <input type="text" class="form-control" id="LastName" name="LastName" required="required" />
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required="required" />
+        </div>
+        <div class="form-group">
+            <label for="RestaurantName">Restaurant Name</label>
+            <input type="text" class="form-control" id="RestaurantName" name="RestaurantName" />
+        </div>
+        <div class="form-group">
+            <label for="BreweryName">Brewery Name</label>
+            <input type="text" class="form-control" id="BreweryName" name="BreweryName" />
+        </div>
+
+        <div class="form-group">
+            <label for="rating">Rating</label>
+            <select class="form-control" id="rating" name="rating">
+                <option value="1">1 star</option>
+                <option value="2">2 stars</option>
+                <option value="3">3 stars</option>
+                <option value="4">4 stars</option>
+                <option value="5">5 stars</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="review">Review</label>
+            <textarea class="form-control" rows="5" cols="60" id="review" name="Review"></textarea>
+        </div>
+        <div class="btn-box">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+<div style="text-align: center; margin: auto; padding-top: 20px;">
+    @if (Model.ReviewFormData != null && Model.ReviewFormData.Count > 0)
+    {
+        <h3>Reviews</h3>
+
+        <table style="width: 80%; margin-top: 10px; margin-left: auto; margin-right: auto; border-collapse: collapse; border: 1px solid black;">
+            <thead>
+                <tr>
+                    <th style="border: 1px solid black;">First Name</th>
+                    <th style="border: 1px solid black;">Last Name</th>
+                    <th style="border: 1px solid black;">Email</th>
+                    <th style="border: 1px solid black;">Restaurant Name</th>
+                    <th style="border: 1px solid black;">Brewery Name</th>
+                    <th style="border: 1px solid black;">Rating</th>
+                    <th style="border: 1px solid black;">Review</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var data in Model.ReviewFormData)
+                {
+                    <tr>
+                        <td style="border: 1px solid black;">@data.FirstName</td>
+                        <td style="border: 1px solid black;">@data.LastName</td>
+                        <td style="border: 1px solid black;">@data.Email</td>
+                        <td style="border: 1px solid black;">@data.RestaurantName</td>
+                        <td style="border: 1px solid black;">@data.BreweryName</td>
+                        <td style="border: 1px solid black;">@data.Rating</td>
+                        <td style="border: 1px solid black;">@data.Review</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No Reviews available.</p>
+    }
+</div>

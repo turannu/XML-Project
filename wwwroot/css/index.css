@@ -12,6 +12,9 @@
     margin-top: 10px;
     
 }
+.img-text {
+    color: #ffffff;
+}
 
 .carousel-inner {
     height: 300px; /* Set a consistent height for the carousel */

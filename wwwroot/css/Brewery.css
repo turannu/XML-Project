@@ -1,0 +1,14 @@
+﻿body {
+}
+
+
+.form-control {
+    padding: 30px !important; /* Override Bootstrap defaults */
+    margin-bottom: 15px; /* Add some space between the input fields */
+}
+.card {
+    padding: 30px !important; /* Override Bootstrap defaults */
+    margin-bottom: 15px; /* Add some space between the input fields */
+}
+
+

@@ -1,0 +1,64 @@
+﻿body {
+}
+.about-content {
+    padding: 20px;
+    text-align: justify;
+    font-size: 22px;   
+}
+
+.about-text {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.header-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.header {
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+}
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.contact-info, .map-section, .social-media {
+    padding: 30px;
+}
+
+    .contact-info i, .social-media i {
+        color: #ff8c00;
+        margin-right: 10px;
+    }
+
+    .social-media a {
+        color: #333;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1.5em;
+    }
+
+        .social-media a:hover {
+            color: #ff8c00;
+        }
+
+
+.contact-info h2 {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.contact-info h2 {
+    font-weight: 500;
+    font-size: 1.5rem;
+}

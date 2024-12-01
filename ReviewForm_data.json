@@ -1,0 +1,29 @@
+[
+  {
+    "FirstName": "Alex",
+    "LastName": "Hale",
+    "Email": "abc@gmail.com",
+    "RestaurantName": "SteakHouse",
+    "BreweryName": null,
+    "Rating": 5,
+    "Review": "Good Experience"
+  },
+  {
+    "FirstName": "Susan",
+    "LastName": "Hale",
+    "Email": "abc@gmail.com",
+    "RestaurantName": "",
+    "BreweryName": "Big Ash Brewing",
+    "Rating": 5,
+    "Review": "It was good"
+  },
+  {
+    "FirstName": "Rebecca",
+    "LastName": "Dahoda",
+    "Email": "rbc@abc.com",
+    "RestaurantName": "",
+    "BreweryName": "Big Ash Brewing",
+    "Rating": 4,
+    "Review": "Wonderful Experience"
+  }
+]

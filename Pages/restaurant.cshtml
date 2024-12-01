@@ -1,18 +1,17 @@
 ﻿@page
 @model XML_Project.Pages.RestaurantModel
-
 @{
     ViewData["Title"] = "Restaurant Search";
 }
 
 <div class="container">
-    <h1>Restaurant Search</h1>
+    <h3>Restaurant Search</h3>
 
     <form method="get" class="mb-4" id="searchForm">
         <div class="row">
             <div class="col-md-5">
                 <div class="form-group">
-                    <label for="State">Filter by State:</label>
+                    <label for="state">State:</label>
                     <select asp-for="State" id="stateSelect" class="form-control">
                         <option value="">All States</option>
                         @foreach (var state in Model.AvailableStates)
@@ -24,7 +23,7 @@
             </div>
             <div class="col-md-5">
                 <div class="form-group">
-                    <label for="City">Filter by City:</label>
+                    <label for="city">City:</label>
                     <select asp-for="City" id="citySelect" class="form-control">
                         <option value="">All Cities</option>
                         @foreach (var city in Model.AvailableCities)
@@ -36,14 +35,13 @@
             </div>
             <div class="col-md-2 align-self-end">
                 <button type="submit" class="btn btn-primary">Search</button>
-                
             </div>
         </div>
     </form>
 
     <div class="row">
         <div class="col-12">
-            <h2>Results: @Model.SearchResults.Count restaurants found</h2>
+            <h4>Results: @Model.SearchResults.Count restaurants found</h4>
         </div>
     </div>
 
@@ -55,11 +53,18 @@
                     <div class="card-body">
                         <h5 class="card-title">@restaurant.Name</h5>
                         <p class="card-text">
-                            <strong>ID:</strong> @restaurant.Id <br />
-                            <strong>Address:</strong> @restaurant.Address <br />
-                            <strong>City:</strong> @restaurant.City <br />
-                            <strong>State:</strong> @restaurant.Province <br />
-                            <strong>Country:</strong> @restaurant.Country
+                            <div>
+                                <strong>Address:</strong> @restaurant.Address
+                            </div>
+                            <div>
+                                <strong>City:</strong> @restaurant.City
+                            </div>
+                            <div>
+                                <strong>State:</strong> @restaurant.Province
+                            </div>
+                            <div>
+                                <strong>Country:</strong> @restaurant.Country
+                            </div>
                         </p>
                         <a href="@restaurant.MapUrl" target="_blank" class="btn btn-info">View on Map</a>
                     </div>
@@ -68,9 +73,9 @@
         }
     </div>
 </div>
---ai help
-@section Scripts {
-    <script>
+
+@section scripts {
+    <script type="text/javascript">
         $(document).ready(function () {
             $('#stateSelect').on('change', function () {
                 var selectedState = $(this).val();

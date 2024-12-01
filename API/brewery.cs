@@ -13,7 +13,7 @@
     {
         [JsonProperty("id")]
         public Guid Id { get; set; }
-        public string StateAbbreviation { get; set; }
+        public string? StateAbbreviation { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }

@@ -4,174 +4,62 @@
     ViewData["Title"] = "About us - Sips and Bites Navigator";
 }
 
-<div class="abouts-us-container">
-    <div class="header">
-        <h1 class="text-center">About us - Sips and Bites Navigator</h1>   
+<div class="container mt-5">
+    <h1>Welcome to Sips n Bites</h1>
+    <img src="~/images/img/madtree.jpg" alt="This image depicts a lively and bustling microbrewery or craft beer pub, with a crowd of patrons enjoying drinks and socializing at the bar and tables" width="1000" class="header-image" />
+    <div class="about-content">
+        <p class="about-text">Sips n Bites is your ultimate web application for exploring the best breweries and restaurants across the USA. We provide you with extensive details on each establishment listed on our platform. Our dedicated team ensures that you have access to up-to-date information about breweries and restaurants, helping you make well-informed choices for your dining and drinking adventures.</p>
+        <p class="about-text">With Sips n Bites, you can search for a wide range of breweries and restaurants based on your preferences, whether it's location, brewery type, or cuisine. Our user-friendly interface allows you to filter and browse through detailed listings, making it easy to find the perfect spot for your next outing. You can also read reviews from fellow enthusiasts to get a sense of what to expect.</p>
+        <p class="about-text">At Sips n Bites, we are committed to promoting a culture of excellence and transparency in the food and beverage industry. We believe that by providing comprehensive information and encouraging high standards, we contribute to the well-being of our community. Our platform serves as a bridge between discerning customers and reputable establishments, fostering an environment where quality and enjoyment meet.</p>
+        <p class="about-text">Join the Sips n Bites community today and embark on a journey of flavorful experiences and delightful discoveries. Whether you are a beer aficionado looking for the next great brewery or a foodie on the hunt for a new favorite restaurant, Sips n Bites welcomes you with open arms.</p>
     </div>
-
-    <div class="text-center image-container">
-        <img src="/images/brewery_photo.jpg" alt="About us page banner image" class="img-fluid" style="width: 100%;">
-    </div>
-
-
-    <div class="side-by-side">
-        <div class="box text-center"> Welcome to our company! We are committed to delivering exceptional services and creating meaningful relationships with our clients.</div>
-        <div class="box text-center">Our team is dedicated to innovation, integrity, and excellence. We believe in empowering our customers with the best solutions tailored to their needs.</div>
-        <div class="box text-center">Your feedback and inquiries are important to us!</div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6">
-            <div class="contact-info">
-                <h2>Reach Out</h2>
-                <ul class="contact-details">
-                    <li><i class="fas fa-map-marker-alt"></i> 456 Brew Lane, Hop City, USA 12345</li>
-                    <li><i class="fas fa-phone"></i> <a href="tel:+1234567890">(123) 456-7890</a></li>
-                    <li><i class="fas fa-envelope"></i> <a href="mailto:info@sipsandbitesnavigator.com">info@sipsandbitesnavigator.com</a></li>
-                    <li><i class="fas fa-clock"></i> Mon-Fri: 10am-8pm, Sat-Sun: 12pm-6pm</li>
-                </ul>
-            </div>
-
-            <div class="social-media">
-                <h3>Connect with Us</h3>
-                <a href="https://www.facebook.com/your-facebook-page" target="_blank" aria-label="Facebook"><img src="/images/facebook_logo.jpg" alt="Facebook Icon" class="img-fluid" style="width: 50px;"></a>
-                <a href="https://www.instagram.com/your-instagram-account" target="_blank" aria-label="Instagram"><img src="/images/instagram-icon.webp" alt="Instagram Icon" class="img-fluid" style="width: 50px;"></a>
-                <a href="https://twitter.com/your-twitter-handle" target="_blank" aria-label="Twitter"><img src="/images/twitter_icon.png" alt="Twitter Icon" class="img-fluid" style="width: 50px;"></a>
-            </div>
-        </div>
-    </div>
-
-    <br />
-
-    
 </div>
+<div class="contact-info">
+    <h3>Reach Out</h3>
+    <ul class="contact-details">
+        <li><i class="fas fa-map-marker-alt"></i> 456 Brew Lane, Hop City, USA 12345</li>
+        <li><i class="fas fa-phone"></i> <a href="tel:+1234567890">(123) 456-7890</a></li>
+        <li><i class="fas fa-envelope"></i> <a href="mailto:info@sipsandbitesnavigator.com">info@sipsandbites.com</a></li>
+        <li><i class="fas fa-clock"></i> Mon-Fri: 10am-8pm, Sat-Sun: 12pm-6pm</li>
+    </ul>
+</div>
+<div class="contact-form-section mt-5">
+    <h4>Contact Form</h4>
 
-<style>
-    .abouts-us-container {
-        width: 100%;
-        margin: 40px auto;
-        background-color: #ffffff;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        background: linear-gradient(120deg, #f9f9f9, #f1f1f1);
-        border-radius: 15px;
-        overflow: hidden;
+    @if (TempData["ContactSubmissionMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["ContactSubmissionMessage"]
+        </div>
     }
 
-        .abouts-us-container p {
-            font-size: 1.5em;
-            max-width: 100%;
-            line-height: 1.0;
-            margin: 100px;
-            justify-content:center;
-            color: #333;
-        }
-
-    .header {
-        color: #fff;
-        padding: 40px 0;
-        text-align: center;
-        margin: 0;
-        background-size: cover;
-        background-position: center;
-    }
-
-    .header h1 {
-            background-color: #164FAC;
-            height: 350px;
-            align-items: center;
-            padding: 20px;
-            margin: 0;
-            justify-content: center;
-            color: #fff;
-            display: flex;
-            font-weight: 800;
-            font-size: 3rem
-    }
-
-    .contact-info, .map-section, .social-media {
-        padding: 30px;
-    }
-
-        .contact-info i, .social-media i {
-            color: #ff8c00;
-            margin-right: 10px;
-        }
-
-        .social-media a {
-            color: #333;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.5em;
-        }
-
-            .social-media a:hover {
-                color: #ff8c00;
-            }
-
-    .map-container {
-        height: 300px;
-        background-color: #e9ecef;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-    }
-
-    .side-by-side {
-            display: flex;
-            justify-content: space-between;
-            align-items: stretch;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 25px;
-            margin-top: 20px;
-        }
-
-         .box {
-            padding: 20px;
-            background-color: #f0f8ff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 50%;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            font-size: 1.5em;
-            flex: 1;
-            flex-wrap: wrap;
-            min-width: 200px;
-            box-sizing: border-box;
-            line-height: 1.8;
-            vertical-align:middle;
-            padding:20px;
-            justify-content: center;
-            align-items: center;
-            color: #333;
-        }
-
-
-    .image-container {
-        text-align: center;
-        margin-top: 0; 
-    }
-
-        .image-container img {
-            max-width: 100%; /* Make the image responsive */
-            height: auto; /* Maintain aspect ratio */
-            width: 4000px; /* Set a specific width (adjust as needed) */
-            margin: 0;
-        }
-
-    .contact-info h2 {
-        font-weight: 700;
-        font-size: 2rem;
-    }
-
-        .contact-info h2 {
-            font-weight: 500;
-            font-size: 1.5rem;
-        }
-
-</style>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <form method="post">
+        <div class="form-group">
+            <label for="Name">Full Name</label>
+            <input type="text" class="form-control" id="Name" name="ContactForm.Name" required="required" value="@Model.ContactForm?.Name" />
+            <span asp-validation-for="ContactForm.Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="Email">Email Address</label>
+            <input type="email" class="form-control" id="Email" name="ContactForm.Email" required="required" value="@Model.ContactForm?.Email" />
+            <span asp-validation-for="ContactForm.Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="Phone">Phone Number</label>
+            <input type="tel" class="form-control" id="Phone" name="ContactForm.Phone" value="@Model.ContactForm?.Phone" />
+        </div>
+        <div class="form-group">
+            <label for="Message">Your Message</label>
+            <textarea class="form-control" id="Message" name="ContactForm.Message" rows="5" required="required">@Model.ContactForm?.Message</textarea>
+            <span asp-validation-for="ContactForm.Message" class="text-danger"></span>
+        </div>
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+</div>
+<div class="social-media">
+    <h3>Connect with Us</h3>
+    <a href="https://www.facebook.com/your-facebook-page" target="_blank" aria-label="Facebook"><img src="/images/facebook_logo.jpg" alt="Facebook Icon" class="img-fluid" style="width: 50px;" /></a>
+    <a href="https://www.instagram.com/your-instagram-account" target="_blank" aria-label="Instagram"><img src="/images/instagram-icon.webp" alt="Instagram Icon" class="img-fluid" style="width: 50px;" /></a>
+    <a href="https://twitter.com/your-twitter-handle" target="_blank" aria-label="Twitter"><img src="/images/twitter_icon.png" alt="Twitter Icon" class="img-fluid" style="width: 50px;" /></a>
+</div>

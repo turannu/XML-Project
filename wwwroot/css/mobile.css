@@ -1,0 +1,17 @@
+﻿/* Mobile styles */
+@media (max-width: 768px) {
+    
+    
+    footer {
+        padding: 10px; /* Adjust padding for mobile view */
+    }
+
+        footer {
+            display: block; /* Stack the footer content */
+        }
+
+        footer .col-md-3 {
+            width: 100%; /* Stack columns on mobile */
+            margin-bottom: 10px; /* Add space between sections */
+        }
+}
