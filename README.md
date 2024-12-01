@@ -116,7 +116,8 @@
 
 ---
 ## Technical Requirements
->- System shall integrate with brewery database API
+>- System shall integrate with brewery database and restaurant database API
+>- 
 >- System shall maintain data Accuracy
 ---
 ## Scrum Rules
